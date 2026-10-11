@@ -1,0 +1,14 @@
+# OS
+Thumbs.db
+Desktop.ini
+
+# Editor
+.vscode/
+
+# Node
+node_modules/
+
+# Local artifacts
+*.log
+*.bak
+.DS_Store

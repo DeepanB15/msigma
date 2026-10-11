@@ -1,0 +1,346 @@
+/**
+ * Mars Sigma Solutions — supplemental styles
+ * Extends the Suretax design system (Ampersans, dark #020e12, #d2d7d5, #001d7c)
+ * with styles for the new Mars Sigma content sections.
+ * NOTE: copy-paste variable tokens are reused from the site stylesheet
+ * (--black-3 #020e12, --light-grey #d2d7d5, --midnight-blue #001d7c, --silver #b4b8ad).
+ */
+
+:root {
+  --ms-dark: #020e12;
+  --ms-dark-2: #11262a;
+  --ms-accent: #001d7c;
+  --ms-light: #d2d7d5;
+  --ms-smoke: #f5f5f5;
+  --ms-silver: #b4b8ad;
+}
+
+/* ---------- Section scaffolding (matches .container / .large-hero rhythm) ---------- */
+
+.ms-section {
+  padding: 6.25rem 0;
+}
+
+.ms-section.dark {
+  background-color: var(--ms-dark);
+  color: #fff;
+}
+
+.ms-section.light {
+  background-color: var(--ms-smoke);
+  color: #000;
+}
+
+.ms-section.accent {
+  background-color: var(--ms-accent);
+  color: #fff;
+}
+
+.ms-eyebrow {
+  color: var(--ms-accent);
+  font-family: Ampersans, sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+  margin: 0 0 1rem;
+}
+
+.ms-section.dark .ms-eyebrow,
+.ms-section.accent .ms-eyebrow {
+  color: var(--ms-light);
+}
+
+.ms-lead {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 46rem;
+}
+
+/* Optional running phrase under a section heading, e.g. "Our Six Core Services" */
+.ms-subhead {
+  font-family: Ampersans, sans-serif;
+  font-weight: 200;
+  font-size: 1.375rem;
+  letter-spacing: 0.04em;
+  margin: 0 0 2.5rem;
+}
+
+.ms-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.ms-grid.two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.ms-grid.four {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.ms-grid.ten {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* ---------- Cards ---------- */
+
+.ms-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 0.75rem;
+  padding: 2rem 1.75rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ms-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(2, 14, 18, 0.1);
+}
+
+.ms-card .ms-card-num {
+  font-family: Ampersans, sans-serif;
+  font-size: 0.8125rem;
+  letter-spacing: 0.1em;
+  color: var(--ms-accent);
+  margin-bottom: 1rem;
+}
+
+.ms-card h3 {
+  font-family: Ampersans, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.3;
+  margin: 0 0 1rem;
+}
+
+.ms-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 1.25rem;
+}
+
+.ms-tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.ms-tags li {
+  font-family: Ampersans, sans-serif;
+  font-size: 0.8125rem;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--ms-light);
+  border-radius: 6.25rem;
+  white-space: nowrap;
+}
+
+.ms-section.dark .ms-card,
+.ms-section.accent .ms-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ---------- ISO 9001:2026 transition steps (horizontal on desktop, vertical on mobile) ---------- */
+
+.ms-steps {
+  counter-reset: ms-step;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.25rem;
+}
+
+.ms-step {
+  position: relative;
+  padding-top: 1.5rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.25);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.ms-step .ms-step-num {
+  font-family: Ampersans, sans-serif;
+  font-size: 0.8125rem;
+  letter-spacing: 0.1em;
+  color: var(--ms-light);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- "Why" minimal cards on light background ---------- */
+
+.ms-why .ms-card {
+  background: transparent;
+  border: 1px solid var(--ms-light);
+  padding: 1.75rem 1.5rem;
+}
+
+.ms-why .ms-card h3 {
+  font-size: 1.0625rem;
+}
+
+/* ---------- Industries image cards ---------- */
+
+.ms-card.media {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 16rem;
+}
+
+.ms-card .ms-media {
+  flex: 1;
+  min-height: 11rem;
+}
+
+.ms-card .ms-media-caption {
+  padding: 1.25rem 1.5rem;
+}
+
+.ms-card .ms-media-caption h3 {
+  margin-bottom: 0.25rem;
+}
+
+.ms-card .ms-media-caption p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* ---------- Standards grid ---------- */
+
+.ms-standards .ms-card {
+  padding: 1.5rem 1.25rem;
+  text-align: left;
+}
+
+.ms-standards .ms-card p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ---------- Client success cards (dark) ---------- */
+
+.ms-success .ms-card p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ---------- Founder ---------- */
+
+.ms-founder {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.ms-founder .ms-card {
+  background: transparent;
+  border: 1px solid var(--ms-light);
+}
+
+.ms-founder ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.ms-founder ul li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.95rem;
+}
+
+/* ---------- Placeholder imagery ---------- */
+/* Self-contained CSS placeholders. Replace with real Mars Sigma photographs
+   by swapping the .ms-ph-* element for an <img> (alt text is already documented
+   in the alt text in the HTML comments where each placeholder is used). */
+
+.ms-ph {
+  background: linear-gradient(135deg, var(--ms-dark-2), var(--ms-accent));
+  position: relative;
+  overflow: hidden;
+}
+
+.ms-ph::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.05) 0 2px,
+    transparent 2px 14px
+  );
+}
+
+.ms-ph.warm {
+  background: linear-gradient(135deg, #232427, #020e12);
+}
+
+.ms-ph.light {
+  background: linear-gradient(135deg, var(--ms-light), #9aa5a1);
+}
+
+/* ---------- Mobile responsiveness ---------- */
+
+@media (max-width: 991px) {
+  .ms-grid,
+  .ms-grid.four,
+  .ms-grid.ten {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ms-grid.two {
+    grid-template-columns: 1fr;
+  }
+
+  .ms-section {
+    padding: 4.5rem 0;
+  }
+
+  .ms-founder {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  /* ISO steps: vertical timeline on mobile, per content spec */
+  .ms-steps {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .ms-step {
+    padding-top: 0;
+    padding-left: 1.5rem;
+    padding-bottom: 1.75rem;
+    border-top: 0;
+    border-left: 2px solid rgba(255, 255, 255, 0.25);
+  }
+
+  .ms-step:last-child {
+    padding-bottom: 0;
+  }
+
+  .ms-step .ms-step-num {
+    margin-bottom: 0.25rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .ms-grid,
+  .ms-grid.four,
+  .ms-grid.ten {
+    grid-template-columns: 1fr;
+  }
+
+  .ms-section {
+    padding: 3.5rem 0;
+  }
+}
