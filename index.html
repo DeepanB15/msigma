@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -10,7 +10,7 @@
 <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link href="assets/css/main.css" rel="stylesheet" type="text/css">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23020e12'/%3E%3Ctext x='16' y='21' font-family='Arial' font-size='14' font-weight='700' fill='%23fff' text-anchor='middle'%3EMS%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%237A1E26'/%3E%3Ctext x='16' y='21' font-family='Arial' font-size='14' font-weight='700' fill='%23fff' text-anchor='middle'%3EMS%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -27,22 +27,30 @@
 }
 </script>
 <style>
-/* ---------- Webflow-independent base + Mars Sigma design tokens ---------- */
-*, *::before, *::after { box-sizing: border-box; }
-
+/* ---------- Mars Sigma Brand Colors (from colourpalatte.jpeg) ---------- */
 :root {
-  --black-3: #020e12;
-  --black-4: #11262a;
-  --light-grey: #d2d7d5;
-  --midnight-blue: #001d7c;
-  --silver: #b4b8ad;
+  /* Primary brand colors */
+  --maroon-red: #7A1E26;
+  --ink-blue: #0F2747;
+  --white: #FFFFFF;
+
+  /* Neutral colors */
+  --deep-navy-black: #0A0F1A;
+  --charcoal: #2B2B2B;
+  --slate-gray: #6B7280;
+  --light-gray: #E5E7EB;
+  --off-white: #F8F876;
+
+  /* Backgrounds */
+  --bg-dark: var(--deep-navy-black);
+  --bg-light: var(--white);
 }
 
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 body {
   margin: 0;
-  background: #fff;
-  color: #000;
+  background: var(--bg-light);
+  color: var(--charcoal);
   font-family: Inter, sans-serif;
   font-size: 16px;
   line-height: 1.5;
@@ -61,9 +69,9 @@ ul { margin: 0; padding: 0; }
   padding-right: 1.5rem;
 }
 
-/* ---------- Buttons (pill + arrow circle, matching the reference design system) ---------- */
+/* ---------- Buttons ---------- */
 .button {
-  background-color: #fff;
+  background-color: var(--maroon-red);
   border-radius: 6.25rem;
   justify-content: space-between;
   align-items: center;
@@ -71,19 +79,21 @@ ul { margin: 0; padding: 0; }
   padding-left: 1.875rem;
   text-decoration: none;
   display: flex;
+  color: #fff;
 }
-.button.black { background-color: var(--black-3); }
-.button.blue { background-color: var(--midnight-blue); }
-.button.outline { background: transparent; border: 1px solid rgba(255,255,255,.5); color: #fff; }
+.button.outline {
+  background: transparent;
+  border: 2px solid var(--maroon-red);
+  color: var(--maroon-red);
+}
 .buttontext {
-  color: #000;
   margin-right: 1.875rem;
   font-family: Inter, sans-serif;
   font-size: 1rem;
+  font-weight: 500;
 }
-.buttontext.white { color: #fff; }
 .buttoncircle {
-  background-color: #fff;
+  background-color: rgba(255,255,255,0.2);
   border-radius: 6.25rem;
   width: 4.0625rem;
   height: 4.0625rem;
@@ -93,16 +103,14 @@ ul { margin: 0; padding: 0; }
   margin-left: auto;
   transition: background-color .3s ease;
 }
-.buttoncircle .button-arrows { color: #000; width: 1.25rem; height: 1.25rem; }
-.button:hover .buttoncircle { background-color: var(--light-grey); }
-.button.black:hover .buttoncircle { background-color: #fff; }
+.button:hover .buttoncircle { background-color: rgba(255,255,255,0.3); }
 
 /* ---------- Navbar ---------- */
 .navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: rgba(2, 14, 18, .92);
+  background: rgba(10, 15, 26, 0.95);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
@@ -125,11 +133,49 @@ ul { margin: 0; padding: 0; }
   letter-spacing: .08em;
   white-space: nowrap;
 }
-.nav-logo span { color: var(--light-grey); font-weight: 300; }
+.nav-logo span { color: var(--slate-gray); font-weight: 300; }
+
+/* Dropdown styles */
+.nav-dropdown {
+  position: relative;
+}
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%; left: 0;
+  background: var(--deep-navy-black);
+  min-width: 220px;
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+  padding: 0.75rem 0;
+  margin-top: 0.5rem;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.dropdown-menu .dropdown-item {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  transition: background-color .2s ease, color .2s ease;
+}
+.dropdown-menu .dropdown-item:hover {
+  background: rgba(122, 30, 38, 0.15);
+  color: var(--maroon-red);
+}
+.dropdown-menu .dropdown-item.active {
+  color: var(--maroon-red);
+  font-weight: 500;
+}
+
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  gap: 1.5rem;
   list-style: none;
 }
 .nav-link {
@@ -137,13 +183,18 @@ ul { margin: 0; padding: 0; }
   text-decoration: none;
   font-size: .9375rem;
   opacity: .85;
-  transition: opacity .2s ease;
+  transition: opacity .2s ease, color .2s ease;
   white-space: nowrap;
 }
-.nav-link:hover { opacity: 1; }
+.nav-link:hover { opacity: 1; color: var(--maroon-red); }
+.nav-link.active {
+  opacity: 1;
+  color: var(--maroon-red);
+  font-weight: 500;
+}
 .nav-cta {
   color: #000;
-  background: #fff;
+  background: var(--maroon-red);
   border-radius: 6.25rem;
   padding: .7rem 1.5rem;
   text-decoration: none;
@@ -151,7 +202,7 @@ ul { margin: 0; padding: 0; }
   white-space: nowrap;
   transition: background-color .3s ease;
 }
-.nav-cta:hover { background-color: var(--light-grey); }
+.nav-cta:hover { background-color: var(--ink-blue); }
 .nav-toggle { display: none; background: none; border: 0; cursor: pointer; padding: .5rem; }
 .nav-toggle span {
   display: block;
@@ -164,7 +215,7 @@ ul { margin: 0; padding: 0; }
 /* ---------- Hero ---------- */
 .large-hero {
   position: relative;
-  background: var(--black-3);
+  background: var(--bg-dark);
   padding: 11rem 0 9rem;
   overflow: hidden;
 }
@@ -180,11 +231,11 @@ ul { margin: 0; padding: 0; }
 .div-block-43723 {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(2,14,18,.85) 0%, rgba(2,14,18,.35) 60%, rgba(2,14,18,.55) 100%);
+  background: linear-gradient(90deg, rgba(10,15,26,.9) 0%, rgba(10,15,26,.4) 60%, rgba(10,15,26,.6) 100%);
 }
 .large-hero-div { position: relative; }
 .hero-location {
-  color: var(--light-grey);
+  color: var(--slate-gray);
   font-size: .875rem;
   letter-spacing: .125em;
   text-transform: uppercase;
@@ -200,7 +251,7 @@ ul { margin: 0; padding: 0; }
   max-width: 21ch;
 }
 .hero-tagline {
-  color: var(--light-grey);
+  color: var(--slate-gray);
   font-family: Inter, sans-serif;
   font-size: 1.125rem;
   margin-bottom: 1rem;
@@ -214,16 +265,6 @@ ul { margin: 0; padding: 0; }
   max-width: 40rem;
 }
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
-.hero-tagline-strip {
-  border-top: 1px solid rgba(255,255,255,.15);
-  margin-top: 4rem;
-  padding-top: 1.25rem;
-}
-.hero-tagline-strip p {
-  color: var(--light-grey);
-  font-size: .9375rem;
-  margin: 0;
-}
 
 /* ---------- Who We Are ---------- */
 .who-grid {
@@ -244,7 +285,7 @@ ul { margin: 0; padding: 0; }
   margin-top: 4rem;
 }
 .stat {
-  border-top: 2px solid var(--black-3);
+  border-top: 2px solid var(--maroon-red);
   padding-top: 1.25rem;
 }
 .stat .stat-num {
@@ -252,10 +293,11 @@ ul { margin: 0; padding: 0; }
   font-weight: 600;
   letter-spacing: -.02em;
   font-variant-numeric: tabular-nums;
+  color: var(--maroon-red);
 }
 .stat .stat-label {
   font-size: .875rem;
-  color: rgba(255,255,255,.75);
+  color: var(--slate-gray);
   margin-top: .25rem;
 }
 
@@ -267,46 +309,75 @@ ul { margin: 0; padding: 0; }
   font-weight: 400;
   line-height: 1.2;
   margin-bottom: 1rem;
+  color: var(--deep-navy-black);
 }
-.section-head p { font-size: 1.0625rem; line-height: 1.6; }
+.section-head p { font-size: 1.0625rem; line-height: 1.6; color: var(--charcoal); }
 
-/* ---------- Generic card grid ---------- */
+/* ---------- Card grid ---------- */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 2rem;
 }
 .card {
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: .75rem;
-  padding: 2rem 1.75rem;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
   transition: transform .3s ease, box-shadow .3s ease;
 }
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(2,14,18,.25);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.1);
 }
 .card-num {
-  font-size: .8125rem;
-  letter-spacing: .1em;
-  color: var(--light-grey);
+  font-size: .875rem;
+  letter-spacing: .125em;
+  color: var(--maroon-red);
+  font-weight: 600;
+  text-transform: uppercase;
   display: block;
   margin-bottom: 1rem;
 }
 .card h3 {
-  font-size: 1.25rem;
-  font-weight: 400;
+  font-size: 1.375rem;
+  font-weight: 600;
   line-height: 1.3;
   margin-bottom: 1rem;
+  color: var(--deep-navy-black);
 }
 .card p {
   font-size: .95rem;
-  line-height: 1.6;
+  line-height: 1.65;
   margin-bottom: 1.25rem;
-  color: rgba(255,255,255,.85);
+  color: var(--charcoal);
 }
 .card p:last-child { margin-bottom: 0; }
+
+/* ---------- Services card (with tags) ---------- */
+.service-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transition: all .3s ease;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(122,30,38,0.1);
+}
+.service-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--deep-navy-black);
+}
+.service-card p {
+  font-size: .95rem;
+  line-height: 1.65;
+  color: var(--charcoal);
+  margin-bottom: 1.5rem;
+}
 .tag-list {
   list-style: none;
   display: flex;
@@ -316,87 +387,20 @@ ul { margin: 0; padding: 0; }
 .tag-list li {
   font-size: .8125rem;
   padding: .35rem .75rem;
-  border: 1px solid rgba(255,255,255,.25);
+  border: 1px solid var(--light-gray);
   border-radius: 6.25rem;
   white-space: nowrap;
+  color: var(--slate-gray);
 }
 
-/* ---------- Standards grid: minimal tiles on dark ---------- */
-.ms-standards .card,
-.ms-success .card { background: rgba(255,255,255,.05); }
-.ms-standards .card p { margin: 0; color: rgba(255,255,255,.75); font-size: .85rem; }
-
-/* ---------- ISO steps ---------- */
-.ms-steps {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 1.25rem;
+/* ---------- Standards grid ---------- */
+.standards-grid .card {
+  background: var(--bg-dark);
+  border-color: rgba(255,255,255,0.1);
+  color: var(--white);
 }
-.ms-step {
-  padding-top: 1.5rem;
-  border-top: 2px solid rgba(255,255,255,.25);
-}
-.ms-step-num {
-  font-size: .8125rem;
-  letter-spacing: .1em;
-  color: var(--light-grey);
-  display: block;
-  margin-bottom: .5rem;
-}
-.ms-step h3 { font-size: 1.0625rem; font-weight: 400; margin-bottom: .75rem; }
-.ms-step p { font-size: .875rem; line-height: 1.6; color: rgba(255,255,255,.8); }
-
-/* ---------- Industries ---------- */
-.industry-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-.industry-card {
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: .75rem;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  min-height: 17rem;
-  transition: transform .3s ease, box-shadow .3s ease;
-}
-.industry-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(2,14,18,.25);
-}
-.industry-card .media {
-  flex: 1;
-  min-height: 10rem;
-}
-.industry-card .caption {
-  padding: 1.25rem 1.5rem 1.5rem;
-}
-.industry-card .caption h3 {
-  font-size: 1.125rem;
-  font-weight: 400;
-  margin-bottom: .25rem;
-}
-.industry-card .caption p {
-  font-size: .9rem;
-  color: rgba(255,255,255,.8);
-  margin: 0;
-}
-
-/* ---------- Placeholder imagery (self-contained; swap for real photos later) ---------- */
-.ph {
-  background: linear-gradient(135deg, var(--black-4), var(--midnight-blue));
-  position: relative;
-  overflow: hidden;
-}
-.ph::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.05) 0 2px, transparent 2px 14px);
-}
-.ph.warm { background: linear-gradient(135deg, #232427, #020e12); }
-.ph.light { background: linear-gradient(135deg, var(--light-grey), #9aa5a1); }
+.standards-grid .card h3 { color: var(--white); }
+.standards-grid .card p { color: rgba(255,255,255,0.75); font-size: .85rem; margin: 0; }
 
 /* ---------- Founder ---------- */
 .founder-grid {
@@ -406,70 +410,123 @@ ul { margin: 0; padding: 0; }
   align-items: start;
 }
 .founder-media {
-  border-radius: .75rem;
-  min-height: 24rem;
+  border-radius: 12px;
+  min-height: 28rem;
+  background: linear-gradient(135deg, var(--maroon-red), var(--ink-blue));
+  position: relative;
+  overflow: hidden;
 }
-.founder-content h2 { font-size: 2rem; font-weight: 400; margin-bottom: .5rem; }
+.founder-content h2 { font-size: 2.2rem; font-weight: 400; margin-bottom: 1.25rem; color: var(--deep-navy-black); }
 .founder-content .founder-role {
   font-size: .9375rem;
-  color: var(--light-grey);
-  margin-bottom: 2rem;
+  color: var(--maroon-red);
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
 }
-.founder-content p { font-size: 1rem; line-height: 1.7; margin-bottom: 1.25rem; color: rgba(255,255,255,.9); }
+.founder-content p { font-size: 1rem; line-height: 1.7; margin-bottom: 1.25rem; color: var(--charcoal); }
 .founder-quote {
-  border-left: 3px solid var(--light-grey);
-  padding-left: 1.25rem;
-  font-size: 1.0625rem;
-  line-height: 1.65;
+  border-left: 4px solid var(--maroon-red);
+  padding-left: 1.5rem;
+  font-size: 1.125rem;
+  line-height: 1.7;
   margin: 2rem 0;
-  color: #fff;
+  color: var(--deep-navy-black);
+  font-style: italic;
 }
-.founder-note { font-size: .8125rem; color: rgba(255,255,255,.6); margin-top: -0.75rem; margin-bottom: 2rem; }
+.founder-quote p { margin: 0; }
 .founder-expertise li {
   list-style: none;
-  padding: .75rem 0;
-  border-bottom: 1px solid rgba(255,255,255,.15);
+  padding: .875rem 0;
+  border-bottom: 1px solid var(--light-gray);
   font-size: .95rem;
-  color: rgba(255,255,255,.9);
+  color: var(--charcoal);
 }
 
-/* ---------- How We Work ---------- */
-.work-grid {
+/* ---------- Placeholder imagery ---------- */
+.ph {
+  background: linear-gradient(135deg, var(--deep-navy-black), var(--ink-blue));
+  position: relative;
+  overflow: hidden;
+}
+.ph::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.05) 0 2px, transparent 2px 14px);
+}
+.ph.warm { background: linear-gradient(135deg, #232427, #0A0F1A); }
+
+/* ---------- Industries ---------- */
+.industry-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
-
-/* ---------- Client success (light cards on dark) ---------- */
-.success-grid .card { background: rgba(255,255,255,.05); }
+.industry-card {
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 18rem;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.industry-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+}
+.industry-card .media {
+  flex: 1;
+  min-height: 11rem;
+  background: var(--slate-gray);
+}
+.industry-card .caption {
+  padding: 1.5rem;
+  background: #fff;
+}
+.industry-card .caption h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: .5rem;
+  color: var(--deep-navy-black);
+}
+.industry-card .caption p {
+  font-size: .9rem;
+  color: var(--slate-gray);
+  margin: 0;
+}
 
 /* ---------- Let's work together ---------- */
-.together-section { padding: 6.25rem 0; }
+.together-section { padding: 6.25rem 0; background: var(--maroon-red); }
 .together-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   align-items: start;
 }
+.together-grid .text-content h2 { color: #fff; }
 .together-support {
   font-size: .9375rem;
-  color: rgba(255,255,255,.8);
-  margin-top: 2rem;
+  color: rgba(255,255,255,.85);
+  margin-top: 1.5rem;
   line-height: 1.9;
 }
 
 /* ---------- Footer ---------- */
 .footer {
-  background: rgba(255,255,255,.05);
+  background: var(--deep-navy-black);
   padding: 5rem 0 2rem;
+  color: var(--white);
 }
 .footer h3 {
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: .05em;
   text-transform: uppercase;
-  margin-bottom: 1.25rem;
-  color: #fff;
+  margin-bottom: 1.5rem;
+  color: var(--white);
 }
 .footer-grid {
   display: grid;
@@ -480,59 +537,62 @@ ul { margin: 0; padding: 0; }
 .footer .contact-line {
   display: flex;
   align-items: center;
-  gap: .75rem;
-  margin-bottom: .75rem;
+  gap: .875rem;
+  margin-bottom: .875rem;
   font-size: .9375rem;
 }
-.footer .contact-line a { color: var(--light-grey); text-decoration: none; }
-.footer .contact-line a:hover { color: #fff; }
+.footer .contact-line svg { flex-shrink: 0; }
+.footer .contact-line a { color: var(--slate-gray); text-decoration: none; }
+.footer .contact-line a:hover { color: var(--maroon-red); }
 .footer-links { list-style: none; }
-.footer-links li { margin-bottom: .625rem; }
+.footer-links li { margin-bottom: .75rem; }
 .footer-links a {
-  color: rgba(255,255,255,.8);
+  color: var(--slate-gray);
   text-decoration: none;
   font-size: .9375rem;
   transition: color .2s ease;
 }
-.footer-links a:hover { color: #fff; }
+.footer-links a:hover { color: var(--maroon-red); }
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,.15);
-  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
   font-size: .875rem;
-  color: rgba(255,255,255,.7);
+  color: var(--slate-gray);
 }
-.footer-bottom nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-.footer-bottom a { color: rgba(255,255,255,.7); text-decoration: none; }
-.footer-bottom a:hover { color: #fff; }
+.footer-bottom nav { display: flex; gap: 2rem; flex-wrap: wrap; }
+.footer-bottom a { color: var(--slate-gray); text-decoration: none; }
+.footer-bottom a:hover { color: var(--maroon-red); }
 .footer-tagline {
   font-size: 1.0625rem;
-  color: var(--light-grey);
-  margin: .5rem 0 1rem;
-  line-height: 1.5;
+  color: var(--slate-gray);
+  margin-bottom: 1rem;
+  line-height: 1.6;
 }
-.footer-loc { font-size: .875rem; color: rgba(255,255,255,.7); }
+.footer-loc { font-size: .875rem; color: var(--slate-gray); }
 
-/* ---------- Page hero (subpages) ---------- */
-.page-hero {
-  background: var(--black-3);
-  padding: 10rem 0 4rem;
+/* ---------- Social links ---------- */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
-.page-hero .container h1 {
-  color: #fff;
-  font-size: 3rem;
-  font-weight: 300;
-  line-height: 1.15;
-  max-width: 24ch;
+.social-link {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  text-decoration: none;
+  transition: background .3s ease;
 }
-.page-hero .container .ms-lead {
-  color: rgba(255,255,255,.85);
-  margin-top: 1.25rem;
-}
+.social-link:hover { background: var(--maroon-red); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 991px) {
@@ -541,8 +601,8 @@ ul { margin: 0; padding: 0; }
     top: 4.5rem; left: 0; right: 0;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
-    background: rgba(2,14,18,.97);
+    gap: 0;
+    background: var(--deep-navy-black);
     padding: 1.5rem;
     transform: translateY(-10px);
     opacity: 0;
@@ -550,40 +610,40 @@ ul { margin: 0; padding: 0; }
     transition: opacity .3s ease, transform .3s ease;
   }
   .nav-menu-open { opacity: 1; pointer-events: auto; transform: translateY(0); }
+  .nav-link { width: 100%; padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
   .nav-toggle { display: block; }
   .nav-cta { margin-left: 0; }
   .hero-box h1 { font-size: 3rem; }
   .who-grid, .together-grid, .founder-grid { grid-template-columns: 1fr; gap: 2rem; }
   .stat-grid { grid-template-columns: repeat(2, 1fr); }
-  .card-grid, .industry-grid, .work-grid { grid-template-columns: repeat(2, 1fr); }
-  .ms-steps { grid-template-columns: repeat(3, 1fr); }
+  .card-grid, .industry-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
+  .dropdown-menu { display: none !important; }
 }
+
 @media (max-width: 767px) {
-  .ms-steps {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-  .ms-step {
-    padding-top: 0;
-    padding-left: 1.5rem;
-    padding-bottom: 1.75rem;
-    border-top: 0;
-    border-left: 2px solid rgba(255,255,255,.25);
-  }
-  .ms-step:last-child { padding-bottom: 0; }
-  .ms-step-num { margin-bottom: .25rem; }
+  .stat-grid { grid-template-columns: 1fr; }
+  .card-grid, .industry-grid { grid-template-columns: 1fr; }
+  .hero-box h1 { font-size: 2.5rem; }
+  .hero-tagline { font-size: 1rem; }
+  .main-content { padding: 4.5rem 0; }
+  .together-section { padding: 4.5rem 0; }
+  .footer { padding: 3.5rem 0 1.5rem; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .together-grid { grid-template-columns: 1fr; }
 }
+
 @media (max-width: 479px) {
-  .hero-box h1 { font-size: 2.25rem; }
-  .page-hero .container h1 { font-size: 2rem; }
-  .card-grid, .industry-grid, .work-grid { grid-template-columns: 1fr; }
-  .stat-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .hero-box h1 { font-size: 2rem; }
   .section-head h2 { font-size: 1.75rem; }
-  .footer-grid { grid-template-columns: 1fr; }
+  .stat-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .card-grid { grid-template-columns: 1fr; }
+  .stat .stat-num { font-size: 2rem; }
+  .card { padding: 1.75rem 1.5rem; }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .button { height: 3.5rem; }
   .buttoncircle { width: 3.5rem; height: 3.5rem; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 1rem; }
 }
 </style>
 </head>
@@ -601,102 +661,112 @@ ul { margin: 0; padding: 0; }
       </button>
 
       <div class="nav-menu" id="nav-menu">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="pages/about.html">About</a>
-        <a class="nav-link" href="pages/services.html">Services</a>
-        <a class="nav-link" href="pages/industries.html">Industries</a>
-        <a class="nav-link" href="pages/iso-9001-2026.html">ISO 9001:2026</a>
-        <a class="nav-link" href="pages/founder.html">Founder</a>
-        <a class="nav-link" href="pages/how-we-work.html">How We Work</a>
+        <a class="nav-link active" href="index.html">Home</a>
+
+        <div class="nav-dropdown">
+          <a class="nav-link" href="pages/business-transformation.html">Business Transformation<span style="font-size:0.75em; margin-left:0.25em;">▼</span></a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="pages/business-transformation.html">Overview</a>
+            <a class="dropdown-item" href="#organisational-restructuring">Organisational Restructuring</a>
+            <a class="dropdown-item" href="#business-turnaround">Business Turnaround</a>
+            <a class="dropdown-item" href="#process-systems">Process &amp; Systems</a>
+          </div>
+        </div>
+
+        <div class="nav-dropdown">
+          <a class="nav-link" href="pages/consulting.html">Consulting<span style="font-size:0.75em; margin-left:0.25em;">▼</span></a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="pages/consulting.html">Overview</a>
+            <a class="dropdown-item" href="#certification-services">Certification Services</a>
+            <a class="dropdown-item" href="#result-oriented-services">Result-Oriented Services</a>
+            <a class="dropdown-item" href="#supplier-development">Supplier Development</a>
+          </div>
+        </div>
+
+        <a class="nav-link" href="pages/third-party-inspection.html">Third Party Inspection</a>
+
+        <div class="nav-dropdown">
+          <a class="nav-link" href="pages/training.html">Training<span style="font-size:0.75em; margin-left:0.25em;">▼</span></a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="pages/training.html">Overview</a>
+            <a class="dropdown-item" href="#awareness">Awareness</a>
+            <a class="dropdown-item" href="#quality-check">Quality Check</a>
+            <a class="dropdown-item" href="#excellence-training">Excellence Training</a>
+          </div>
+        </div>
+
+        <a class="nav-link" href="pages/contact.html">Contact Us</a>
         <a class="nav-cta" href="pages/contact.html">Talk to Our Experts</a>
       </div>
     </div>
   </nav>
 </header>
 
-<!-- ================= FIRST VISIT NOTE =================
-     Hero placeholders (.ph elements) mark where real Mars Sigma
-     photography will be placed once approved photos are available. -->
+<!-- ================= HERO SECTION ================= -->
 <section class="large-hero">
   <div class="hero-image-bg ph" role="img" aria-label="Placeholder: manufacturing floor / quality inspection photograph">
     <div class="image-411"></div>
     <div class="div-block-43723"></div>
   </div>
   <div class="container large-hero-div">
+  <div class="container large-hero-div">
     <div class="hero-box">
-      <div class="hero-eyebrow ms-eyebrow" style="color:var(--light-grey)">
-        MARS SIGMA SOLUTIONS PVT LTD
+      <div class="hero-eyebrow" style="color:var(--maroon-red); font-weight:600; letter-spacing:0.15em; text-transform:uppercase; font-size:0.875rem;">
+        DRIVING QUALITY. TRANSFORMING BUSINESSES. DELIVERING EXCELLENCE.
       </div>
-      <h1>Driving Quality.<br>Transforming Businesses.<br>Delivering Excellence.</h1>
+      <h1>Expert solutions in ISO Management Systems, Business Transformation,<br>Third-Party Inspection &amp; Industrial Training.</h1>
       <div class="hero-tagline">From Certification Readiness to System Sustenance — Your Partner at Every Stage of Excellence.</div>
       <p class="hero-desc">
-        Expert solutions in ISO Management Systems, Business Transformation, Third-Party
-        Inspection, Industrial Training and Continuous Improvement.
+        Partner with Mars Sigma to strengthen quality, improve operational performance and build sustainable management systems. We deliver practical, result-oriented solutions that go beyond certification to deliver lasting business value.
       </p>
       <div class="hero-location">India | Bahrain</div>
       <div class="hero-actions">
-        <a href="#what-we-do" class="button blue">
-          <div class="buttontext white">Explore Our Services</div>
+        <a href="#core-services" class="button">
+          <div class="buttontext">Explore Our Services</div>
           <div class="buttoncircle">
-            <div class="button-arrows">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="m18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10L18 6z"></svg>
-            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" width="16" height="16"><path d="m18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10L18 6z"></svg>
           </div>
         </a>
         <a href="pages/contact.html" class="button outline">
-          <div class="buttontext white">Talk to Our Experts</div>
+          <div class="buttontext">Talk to Our Experts</div>
           <div class="buttoncircle">
-            <div class="button-arrows">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="m18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10L18 6z"></svg>
-            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" width="16" height="16"><path d="m18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10L18 6z"></svg>
           </div>
         </a>
       </div>
     </div>
-  </div>
-  <div class="container hero-tagline-strip">
-    <p>From Certification Readiness to System Sustenance — Your Partner at Every Stage of Excellence.</p>
   </div>
 </section>
 
 <!-- ================= WHO WE ARE ================= -->
-<section class="ms-section dark" id="who-we-are">
+<section class="main-content" id="who-we-are">
   <div class="container">
     <div class="who-grid">
       <div>
-        <div class="ms-eyebrow">Who We Are</div>
-        <h2 class="head-2" style="color:#fff; font-size:2.2rem; font-weight:400; margin:0;">
-          Your Trusted Partner in Quality, Compliance &amp; Operational Excellence
-        </h2>
+        <div class="hero-eyebrow" style="color:var(--maroon-red); font-weight:600; letter-spacing:0.15em; text-transform:uppercase; font-size:0.875rem;">
+          WHO WE ARE
+        </div>
+        <h2>Your Trusted Partner in Quality, Compliance &amp; Operational Excellence</h2>
+        <p class="hero-desc" style="margin-top:1.5rem; color:var(--charcoal);">
+          Mars Sigma Solutions Pvt Ltd is a professional consulting and industrial services organization committed to helping businesses achieve excellence through effective management systems, process improvements and technical expertise.
+        </p>
       </div>
       <div class="who-body">
         <p>
-          Mars Sigma Solutions Pvt Ltd is a professional consulting and industrial services
-          organization committed to helping businesses achieve excellence through effective
-          management systems, process improvements and technical expertise.
+          We work closely with manufacturing and service organizations to strengthen operational performance, enhance compliance, develop people and build a culture of continual improvement.
         </p>
         <p>
-          We work closely with manufacturing and service organizations to strengthen operational
-          performance, enhance compliance, develop people and build a culture of continual improvement.
+          Our expertise spans ISO Management System Consulting, Business Transformation, Third-Party Inspection, Supplier Development, Industrial Training and Management System Sustenance.
         </p>
         <p>
-          Our expertise spans ISO Management System Consulting, Business Transformation,
-          Third-Party Inspection, Supplier Development, Industrial Training and Management
-          System Sustenance.
+          What sets us apart is our practical, industry-driven approach. We don't just recommend solutions. We work alongside your teams to implement improvements, overcome operational challenges and develop management systems that deliver lasting value.
         </p>
         <p>
-          What sets us apart is our practical, industry-driven approach. We don't just recommend
-          solutions. We work alongside your teams to implement improvements, overcome operational
-          challenges and develop management systems that deliver lasting value.
-        </p>
-        <p>
-          At Mars Sigma, our commitment goes beyond compliance — we help businesses perform
-          better, every day.
+          At Mars Sigma, our commitment goes beyond compliance — we help businesses perform better, every day.
         </p>
       </div>
     </div>
 
-    <!-- Figures below need confirmation with Mars Sigma before publication (per content spec). -->
     <div class="stat-grid">
       <div class="stat">
         <div class="stat-num">25+</div>
@@ -718,100 +788,82 @@ ul { margin: 0; padding: 0; }
   </div>
 </section>
 
-<!-- ================= WHAT WE DO ================= -->
-<section class="ms-section light" id="what-we-do">
+<!-- ================= CORE SERVICES OVERVIEW ================= -->
+<section class="main-content" id="core-services">
   <div class="container">
     <div class="section-head">
-      <div class="ms-eyebrow" style="color:var(--ms-accent)">What We Do</div>
+      <div class="hero-eyebrow" style="color:var(--maroon-red); font-weight:600; letter-spacing:0.15em; text-transform:uppercase; font-size:0.875rem;">
+        WHAT WE DO
+      </div>
       <h2>Comprehensive Solutions for Quality, Compliance &amp; Business Excellence</h2>
       <p>
-        From implementing internationally recognized management systems to improving operational
-        efficiency and ensuring product quality, Mars Sigma delivers practical solutions that help
-        organizations achieve sustainable business excellence.
+        From implementing internationally recognized management systems to improving operational efficiency and ensuring product quality, Mars Sigma delivers practical solutions that help organizations achieve sustainable business excellence.
       </p>
     </div>
 
     <div class="card-grid">
-      <!-- 01 -->
-      <article class="card">
+      <!-- 01: ISO CONSULTING -->
+      <article class="service-card">
         <span class="card-num">01 — ISO CONSULTING</span>
         <h3>ISO Management System Consulting</h3>
-        <p>
-          Build effective management systems that strengthen compliance, improve performance
-          and prepare your organization for certification.
-        </p>
+        <p>Build effective management systems that strengthen compliance, improve performance and prepare your organization for certification.</p>
         <ul class="tag-list">
           <li>ISO 9001</li><li>IATF 16949</li><li>ISO 14001</li><li>ISO 45001</li>
           <li>ISO 27001</li><li>AS9100</li><li>ISO 22000</li><li>ISO 17025</li>
         </ul>
       </article>
 
-      <!-- 02 -->
-      <article class="card">
+      <!-- 02: SUSTENANCE -->
+      <article class="service-card">
         <span class="card-num">02 — SUSTENANCE</span>
-        <h3>Management System Sustenance &amp; Continuous Improvement</h3>
-        <p>
-          Certification is a milestone. Sustaining excellence is a commitment. Keep your management
-          systems effective, updated and audit-ready through structured, ongoing professional support.
-        </p>
+        <h3>Management System Sustenance</h3>
+        <p>Certification is a milestone. Sustaining excellence is a commitment. Keep your management systems effective, updated and audit-ready through structured, ongoing professional support.</p>
         <ul class="tag-list">
           <li>Internal Audits</li><li>Management Reviews</li><li>Documentation</li>
           <li>Corrective Actions</li><li>Surveillance Readiness</li><li>Continual Improvement</li>
         </ul>
       </article>
 
-      <!-- 03 -->
-      <article class="card">
+      <!-- 03: INSPECTION -->
+      <article class="service-card">
         <span class="card-num">03 — INSPECTION</span>
-        <h3>Third-Party Inspection &amp; Quality Assurance</h3>
-        <p>
-          Protect your business from costly defects, rework and customer complaints through
-          professional inspection and verification services.
-        </p>
+        <h3>Third-Party Inspection</h3>
+        <p>Protect your business from costly defects, rework and customer complaints through professional inspection and verification services.</p>
         <ul class="tag-list">
           <li>Incoming Inspection</li><li>In-Process Inspection</li><li>Final Inspection</li>
-          <li>Pre-Dispatch Inspection</li><li>Vendor Inspection</li><li>Quality Manpower Deployment</li>
+          <li>Pre-Dispatch Inspection</li><li>Vendor Inspection</li><li>Quality Manpower</li>
         </ul>
       </article>
 
-      <!-- 04 -->
-      <article class="card">
+      <!-- 04: TRANSFORMATION -->
+      <article class="service-card">
         <span class="card-num">04 — TRANSFORMATION</span>
-        <h3>Business Transformation &amp; Operational Excellence</h3>
-        <p>
-          Transform business performance by improving processes, reducing waste, strengthening
-          productivity and building a culture of excellence.
-        </p>
+        <h3>Business Transformation</h3>
+        <p>Transform business performance by improving processes, reducing waste, strengthening productivity and building a culture of excellence.</p>
         <ul class="tag-list">
           <li>Lean Manufacturing</li><li>Six Sigma</li><li>5S</li>
           <li>TPM</li><li>TQM</li><li>Process Improvement</li>
         </ul>
       </article>
 
-      <!-- 05 -->
-      <article class="card">
-        <span class="card-num">05 — SUPPLIER DEVELOPMENT</span>
-        <h3>Supplier Development &amp; Quality Improvement</h3>
-        <p>
-          Strengthen your supply chain by developing supplier capabilities, improving process
-          controls and addressing recurring quality issues.
-        </p>
+      <!-- 05: SUPPLIER DEVELOPMENT -->
+      <article class="service-card">
+        <span class="card-num">05 — SUPPLIER DEV</span>
+        <h3>Supplier Development</h3>
+        <p>Strengthen your supply chain by developing supplier capabilities, improving process controls and addressing recurring quality issues.</p>
         <ul class="tag-list">
           <li>Supplier Audits</li><li>Supplier Evaluation</li><li>Process Improvement</li>
           <li>Root Cause Analysis</li><li>Corrective Action Support</li>
         </ul>
       </article>
 
-      <!-- 06 -->
-      <article class="card">
+      <!-- 06: TRAINING -->
+      <article class="service-card">
         <span class="card-num">06 — TRAINING</span>
-        <h3>Industrial Training &amp; Competency Development</h3>
-        <p>
-          Develop competent professionals and high-performing teams through practical,
-          industry-focused technical and management-system training.
-        </p>
+        <h3>Industrial Training</h3>
+        <p>Develop competent professionals and high-performing teams through practical, industry-focused technical and management-system training.</p>
         <ul class="tag-list">
-          <li>Lead Auditor Training</li><li>Internal Auditor Training</li><li>Automotive Core Tools</li>
+          <li>Lead Auditor</li><li>Internal Auditor</li><li>Automotive Core Tools</li>
           <li>VDA 6.3</li><li>Six Sigma</li><li>Lean Manufacturing</li>
         </ul>
       </article>
@@ -819,95 +871,33 @@ ul { margin: 0; padding: 0; }
   </div>
 </section>
 
-<!-- ================= ISO 9001:2026 TRANSITION ================= -->
-<section class="ms-section dark" id="iso-9001-2026">
-  <div class="container">
-    <div class="section-head">
-      <div class="ms-eyebrow">ISO 9001:2026 Transition</div>
-      <h2>ISO 9001:2026 — Is Your Organization Ready for the Next Generation of Quality Management?</h2>
-      <p>The standard has evolved. Is your Quality Management System ready?</p>
-      <p style="margin-top:1rem">
-        The transition to ISO 9001:2026 presents an opportunity for organizations to review their
-        existing Quality Management Systems, strengthen risk-based thinking, enhance operational
-        effectiveness and reinforce a culture of quality and continual improvement.
-      </p>
-    </div>
-
-    <div class="ms-steps">
-      <div class="ms-step">
-        <span class="ms-step-num">01</span>
-        <h3>Understand the Changes</h3>
-        <p>Identify the revised requirements and understand their implications for your existing Quality Management System.</p>
-      </div>
-      <div class="ms-step">
-        <span class="ms-step-num">02</span>
-        <h3>Conduct a Gap Assessment</h3>
-        <p>Evaluate your current processes, documentation and practices against ISO 9001:2026 requirements.</p>
-      </div>
-      <div class="ms-step">
-        <span class="ms-step-num">03</span>
-        <h3>Develop a Transition Roadmap</h3>
-        <p>Prepare a practical action plan with defined responsibilities, priorities and timelines.</p>
-      </div>
-      <div class="ms-step">
-        <span class="ms-step-num">04</span>
-        <h3>Implement Required Improvements</h3>
-        <p>Update relevant processes, documentation and controls while building awareness and competence across the organization.</p>
-      </div>
-      <div class="ms-step">
-        <span class="ms-step-num">05</span>
-        <h3>Verify System Effectiveness</h3>
-        <p>Conduct internal audits, review corrective actions and evaluate readiness for the transition audit.</p>
-      </div>
-      <div class="ms-step">
-        <span class="ms-step-num">06</span>
-        <h3>Sustain &amp; Continually Improve</h3>
-        <p>Maintain an effective Quality Management System through periodic reviews, performance monitoring and ongoing improvement.</p>
-      </div>
-    </div>
-
-    <div style="margin-top:3.5rem">
-      <h3 style="font-size:1.375rem; font-weight:400; margin-bottom:1rem">
-        Don't Just Transition. Transform the Way Quality Works.
-      </h3>
-      <a href="pages/contact.html" class="button blue">
-        <div class="buttontext white">Book Your ISO 9001:2026 Gap Assessment</div>
-        <div class="buttoncircle">
-          <div class="button-arrows">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="m18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10L18 6z"></svg>
-          </div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
 <!-- ================= WHY MARS SIGMA ================= -->
-<section class="ms-section light" id="why-mars-sigma">
+<section class="main-content" id="why-mars-sigma" style="background:var(--bg-light);">
   <div class="container">
     <div class="section-head">
-      <div class="ms-eyebrow" style="color:var(--ms-accent)">Why Mars Sigma?</div>
+      <div class="hero-eyebrow" style="color:var(--maroon-red); font-weight:600; letter-spacing:0.15em; text-transform:uppercase; font-size:0.875rem;">
+        WHY MARS SIGMA
+      </div>
       <h2>Experience That Understands Your Challenges. Expertise That Delivers Results.</h2>
       <p>
-        At Mars Sigma Solutions, we believe effective consulting begins with understanding your
-        business — not simply interpreting the requirements of a standard.
+        At Mars Sigma Solutions, we believe effective consulting begins with understanding your business — not simply interpreting the requirements of a standard.
       </p>
     </div>
 
     <div class="card-grid">
       <article class="card">
         <span class="card-num">01</span>
-        <h3>Decades of Industry &amp; Auditing Experience</h3>
+        <h3>Decades of Industry Experience</h3>
         <p>Our founder-led approach brings extensive experience in management systems, quality auditing, manufacturing operations and business improvement.</p>
       </article>
       <article class="card">
         <span class="card-num">02</span>
-        <h3>Practical Solutions. Measurable Improvements.</h3>
-        <p>We go beyond documentation and recommendations, implementing practical solutions that strengthen compliance and meaningful operational improvements.</p>
+        <h3>Practical Solutions</h3>
+        <p>We go beyond documentation and recommendations, implementing practical solutions that strengthen compliance and deliver measurable operational improvements.</p>
       </article>
       <article class="card">
         <span class="card-num">03</span>
-        <h3>Expertise Across Multiple Industries</h3>
+        <h3>Industry-Specific Expertise</h3>
         <p>From automotive and engineering to aerospace, process industries and services — solutions tailored to your operations and business objectives.</p>
       </article>
       <article class="card">
@@ -926,29 +916,23 @@ ul { margin: 0; padding: 0; }
         <p>We work closely with your team to develop solutions that can be implemented effectively, building long-term relationships through professional service and integrity.</p>
       </article>
     </div>
-
-    <h3 style="font-size:1.375rem; font-weight:400; margin-top:3.5rem; text-align:left">
-      We Don't Just Build Systems. We Help Businesses Perform Better.
-    </h3>
   </div>
 </section>
 
 <!-- ================= INDUSTRIES WE SERVE ================= -->
-<section class="ms-section dark" id="industries">
+<section class="main-content" id="industries" style="background:var(--bg-dark); color:var(--white);">
   <div class="container">
     <div class="section-head">
-      <div class="ms-eyebrow">Industries We Serve</div>
+      <div class="hero-eyebrow" style="color:var(--maroon-red);">
+        Industries We Serve
+      </div>
       <h2>Industry-Specific Expertise. Business-Focused Solutions.</h2>
       <p>
-        Every industry faces unique challenges in quality, compliance, operational efficiency
-        and customer expectations. Mars Sigma combines industry knowledge with practical
-        technical expertise to strengthen management systems, improve processes and achieve
-        sustainable performance.
+        Every industry faces unique challenges in quality, compliance, operational efficiency and customer expectations. Mars Sigma combines industry knowledge with practical technical expertise to strengthen management systems, improve processes and achieve sustainable performance.
       </p>
     </div>
 
     <div class="industry-grid">
-      <!-- Placeholder imagery; swap for real Mars Sigma photography once approved. -->
       <article class="industry-card">
         <div class="media ph" role="img" aria-label="Placeholder: engineering manufacturing line"></div>
         <div class="caption">
@@ -995,29 +979,54 @@ ul { margin: 0; padding: 0; }
   </div>
 </section>
 
-<!-- ================= MEET OUR FOUNDER ================= -->
-<section class="ms-section dark" id="founder">
+<!-- ================= STANDARDS & FRAMEWORKS ================= -->
+<section class="main-content" id="standards">
   <div class="container">
-    <div class="ms-eyebrow">Meet Our Founder</div>
+    <div class="section-head">
+      <div class="hero-eyebrow" style="color:var(--maroon-red); font-weight:600; letter-spacing:0.15em; text-transform:uppercase; font-size:0.875rem;">
+        STANDARDS &amp; FRAMEWORKS
+      </div>
+      <h2>Global Standards. Practical Expertise. Sustainable Excellence.</h2>
+      <p>
+        International standards provide the foundation for effective management systems, consistent processes and improved organizational performance.
+      </p>
+    </div>
+
+    <div class="card-grid standards-grid">
+      <article class="card"><h3>ISO 9001</h3><p>Quality Management Systems</p></article>
+      <article class="card"><h3>IATF 16949</h3><p>Automotive Quality Management</p></article>
+      <article class="card"><h3>ISO 14001</h3><p>Environmental Management Systems</p></article>
+      <article class="card"><h3>ISO 45001</h3><p>Occupational Health &amp; Safety</p></article>
+      <article class="card"><h3>ISO/IEC 27001</h3><p>Information Security Management</p></article>
+      <article class="card"><h3>AS9100</h3><p>Aerospace Quality Management</p></article>
+      <article class="card"><h3>ISO 22000</h3><p>Food Safety Management Systems</p></article>
+      <article class="card"><h3>ISO/IEC 17025</h3><p>Testing &amp; Calibration Laboratories</p></article>
+      <article class="card"><h3>VDA 6.3</h3><p>Audit Process</p></article>
+      <article class="card"><h3>Automotive Core Tools</h3><p>APQP | PPAP | FMEA | MSA | SPC</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MEET OUR FOUNDER ================= -->
+<section class="main-content" id="founder" style="background:var(--bg-light);">
+  <div class="container">
+    <div class="hero-eyebrow" style="color:var(--maroon-red); font-weight:600; letter-spacing:0.15em; text-transform:uppercase; font-size:0.875rem; margin-bottom:1.5rem;">
+      MEET OUR FOUNDER
+    </div>
     <div class="founder-grid">
       <div>
-        <div class="founder-media ph warm" role="img" aria-label="Placeholder: Mr. Srinivasan Subramanian portrait"></div>
+        <img src="assets/images/founder.jpg" alt="Mr. Srinivasan Subramanian - Founder & Principal Consultant" class="founder-media" loading="lazy">
       </div>
       <div class="founder-content">
         <h2>Three Decades of Experience. One Commitment to Excellence.</h2>
-        <div class="founder-role">Mr. Srinivasan Subramanian — Founder &amp; Principal Consultant | Mars Sigma Solutions Pvt Ltd</div>
+        <div class="founder-role">Mr. Srinivasan Subramanian — Founder &amp; Principal Consultant</div>
         <p>
-          With approximately three decades of professional experience in quality management,
-          management-system auditing, industrial consulting and operational improvement,
-          Mr. Subramanian Srinivasan brings a practical, business-focused perspective to
-          organizational excellence.
+          With approximately three decades of professional experience in quality management, management-system auditing, industrial consulting and operational improvement, Mr. Subramanian Srinivasan brings a practical, business-focused perspective to organizational excellence.
         </p>
-        <blockquote class="founder-quote">
-          "Quality should not exist merely in documents or audit reports. It should be reflected
-          in the way an organization operates, performs and continually improves."
-        </blockquote>
-        <p class="founder-note">Proposed brand messaging — pending approval by the founder before publication.</p>
-        <h3 style="font-size:1rem; font-weight:500; letter-spacing:.05em; text-transform:uppercase; margin-bottom:.5rem">Areas of Professional Expertise</h3>
+        <div class="founder-quote">
+          <p>"Quality should not exist merely in documents or audit reports. It should be reflected in the way an organization operates, performs and continually improves."</p>
+        </div>
+        <h3 style="font-size:1rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase; margin-bottom:1rem; color:var(--deep-navy-black);">Areas of Professional Expertise</h3>
         <ul class="founder-expertise">
           <li>ISO Management Systems &amp; Quality Auditing</li>
           <li>Automotive Quality Management &amp; VDA 6.3</li>
@@ -1031,143 +1040,13 @@ ul { margin: 0; padding: 0; }
   </div>
 </section>
 
-<!-- ================= HOW WE WORK ================= -->
-<section class="ms-section light" id="how-we-work">
-  <div class="container">
-    <div class="section-head">
-      <div class="ms-eyebrow" style="color:var(--ms-accent)">How We Work</div>
-      <h2>A Structured Approach. Practical Solutions. Sustainable Results.</h2>
-      <p>
-        At Mars Sigma, meaningful improvement begins with understanding your organization's
-        challenges, objectives and operational realities. Our approach combines systematic
-        assessment, technical expertise, collaborative implementation and continuous
-        improvement to deliver solutions that work in practice — not just on paper.
-      </p>
-    </div>
-
-    <div class="work-grid">
-      <article class="card">
-        <span class="card-num">01 — UNDERSTAND</span>
-        <h3>Understand</h3>
-        <p>We begin by understanding your business — objectives, existing processes, customer requirements and key challenges.</p>
-      </article>
-      <article class="card">
-        <span class="card-num">02 — ASSESS</span>
-        <h3>Assess</h3>
-        <p>Through structured assessments, process reviews and relevant audits, we identify compliance gaps, risks and improvement opportunities.</p>
-      </article>
-      <article class="card">
-        <span class="card-num">03 — DESIGN</span>
-        <h3>Design</h3>
-        <p>We create practical action plans, management-system frameworks and improvement strategies aligned with your needs and priorities.</p>
-      </article>
-      <article class="card">
-        <span class="card-num">04 — IMPLEMENT</span>
-        <h3>Implement</h3>
-        <p>We work alongside your teams to implement agreed improvements, strengthen processes, develop competencies and embed effective practices.</p>
-      </article>
-      <article class="card">
-        <span class="card-num">05 — VERIFY</span>
-        <h3>Verify</h3>
-        <p>We evaluate implementation through audits, performance reviews, process verification and corrective-action follow-up.</p>
-      </article>
-      <article class="card">
-        <span class="card-num">06 — SUSTAIN</span>
-        <h3>Sustain</h3>
-        <p>We support organizations maintaining effective systems through periodic reviews, internal audits, monitoring and continual improvement.</p>
-      </article>
-    </div>
-
-    <h3 style="font-size:1.375rem; font-weight:400; margin-top:3.5rem">
-      Beyond Recommendations. Towards Lasting Results.
-    </h3>
-    <p style="margin-bottom:0">
-      At Mars Sigma, our focus is not simply on completing an assignment — it is on helping your
-      organization build the capability to sustain improvements.
-    </p>
-  </div>
-</section>
-
-<!-- ================= CLIENT SUCCESS & EXPERIENCE ================= -->
-<section class="ms-section dark" id="client-success">
-  <div class="container">
-    <div class="section-head">
-      <div class="ms-eyebrow">Client Success &amp; Experience</div>
-      <h2>Trusted Expertise. Meaningful Improvements. Lasting Relationships.</h2>
-      <p>
-        At Mars Sigma Solutions, we measure the value of our work through the improvements our
-        customers are able to implement and sustain. Our engagements focus on addressing real
-        business challenges.
-      </p>
-    </div>
-
-    <div class="card-grid success-grid">
-      <article class="card">
-        <span class="card-num">01</span>
-        <h3>Automotive Quality Management</h3>
-        <p>Strengthening Systems. Improving Process Discipline.<br><br>
-          Supporting automotive organizations in strengthening quality management practices,
-          improving process controls and preparing for applicable IATF 16949 requirements.</p>
-      </article>
-      <article class="card">
-        <span class="card-num">02</span>
-        <h3>Manufacturing Excellence</h3>
-        <p>Reducing Inefficiencies. Strengthening Performance.<br><br>
-          Helping manufacturing organizations identify operational gaps, improve process
-          consistency and introduce practical continual-improvement initiatives.</p>
-      </article>
-      <article class="card">
-        <span class="card-num">03</span>
-        <h3>Environmental, Health &amp; Safety Management</h3>
-        <p>Building Safer, More Responsible Operations.<br><br>
-          Supporting organizations implementing and improving environmental and occupational
-          health and safety management systems aligned with applicable ISO requirements.</p>
-      </article>
-      <article class="card">
-        <span class="card-num">04</span>
-        <h3>Training &amp; Competency Development</h3>
-        <p>Developing People. Building Organizational Capability.<br><br>
-          Delivering industry-focused training that helps professionals strengthen their
-          understanding of management systems, auditing, quality tools and continuous improvement.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ================= STANDARDS & FRAMEWORKS ================= -->
-<section class="ms-section dark ms-standards" id="standards">
-  <div class="container">
-    <div class="section-head">
-      <div class="ms-eyebrow">Standards &amp; Frameworks</div>
-      <h2>Global Standards. Practical Expertise. Sustainable Excellence.</h2>
-      <p>
-        International standards provide the foundation for effective management systems,
-        consistent processes and improved organizational performance.
-      </p>
-    </div>
-
-    <div class="card-grid">
-      <article class="card"><h3>ISO 9001</h3><p>Quality Management Systems</p></article>
-      <article class="card"><h3>IATF 16949</h3><p>Automotive Quality Management</p></article>
-      <article class="card"><h3>ISO 14001</h3><p>Environmental Management Systems</p></article>
-      <article class="card"><h3>ISO 45001</h3><p>Occupational Health &amp; Safety Management Systems</p></article>
-      <article class="card"><h3>ISO/IEC 27001</h3><p>Information Security Management Systems</p></article>
-      <article class="card"><h3>AS9100</h3><p>Aerospace Quality Management</p></article>
-      <article class="card"><h3>ISO 22000</h3><p>Food Safety Management Systems</p></article>
-      <article class="card"><h3>ISO/IEC 17025</h3><p>Testing &amp; Calibration Laboratories</p></article>
-      <article class="card"><h3>VDA 6.3</h3><p>Audit Process</p></article>
-      <article class="card"><h3>Automotive Core Tools</h3><p>APQP | PPAP | FMEA | MSA | SPC</p></article>
-    </div>
-  </div>
-</section>
-
 <!-- ================= LET'S WORK TOGETHER ================= -->
 <section class="together-section" id="contact">
   <div class="container">
     <div class="together-grid">
-      <div>
-        <div class="ms-eyebrow">Let's Work Together</div>
-        <h2 style="font-size:2.2rem; font-weight:400; line-height:1.2; margin-bottom:1.5rem">
+      <div class="text-content">
+        <div class="hero-eyebrow" style="color:rgba(255,255,255,0.85);">Let's Work Together</div>
+        <h2 style="font-size:2.2rem; font-weight:400; line-height:1.2; margin-bottom:1.5rem;">
           Your Challenges. Our Expertise. Better Business Outcomes.
         </h2>
         <div class="together-support">
@@ -1176,34 +1055,24 @@ ul { margin: 0; padding: 0; }
         </div>
       </div>
       <div>
-        <p style="margin-bottom:1.25rem; line-height:1.7">
+        <p style="margin-bottom:1.25rem; line-height:1.7; color:rgba(255,255,255,0.9);">
           Whether you are preparing for ISO certification, strengthening your management systems,
           improving manufacturing quality, developing suppliers or building workforce capabilities,
           Mars Sigma is ready to support your journey.
         </p>
-        <p style="margin-bottom:1.25rem; line-height:1.7">
+        <p style="margin-bottom:1.25rem; line-height:1.7; color:rgba(255,255,255,0.9);">
           Our experienced professionals work closely with your organization to understand your
           requirements and develop practical solutions that improve performance and create
           sustainable value.
         </p>
-        <p style="margin-bottom:2.5rem; line-height:1.7">
+        <p style="margin-bottom:2.5rem; line-height:1.7; color:rgba(255,255,255,0.9);">
           Let's discuss how we can help your business move forward.
         </p>
         <div class="hero-actions">
-          <a href="pages/contact.html" class="button black">
-            <div class="buttontext white">Talk to Our Experts</div>
+          <a href="pages/contact.html" class="button">
+            <div class="buttontext">Talk to Our Experts</div>
             <div class="buttoncircle">
-              <div class="button-arrows">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="m18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10L18 6z"></svg>
-              </div>
-            </div>
-          </a>
-          <a href="pages/contact.html" class="button outline" style="border-color:rgba(0,0,0,.4); color:#000">
-            <div class="buttontext" style="color:#000">Request a Consultation</div>
-            <div class="buttoncircle" style="background:#fff">
-              <div class="button-arrows" style="color:#000">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="m18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10L18 6z"></svg>
-              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" width="16" height="16"><path d="m18 6l-1.43 1.393L24.15 15H4v2h20.15l-7.58 7.573L18 26l10-10L18 6z"></svg>
             </div>
           </a>
         </div>
@@ -1213,42 +1082,52 @@ ul { margin: 0; padding: 0; }
 </section>
 
 <!-- ================= FOOTER ================= -->
-<footer class="footer dark">
+<footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div>
         <h3>Mars Sigma Solutions Pvt Ltd</h3>
         <div class="footer-tagline">Driving Quality.<br>Transforming Businesses.<br>Delivering Excellence.</div>
         <div class="footer-loc">India | Bahrain</div>
+        <div class="social-links" style="margin-top:1.5rem;">
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.33 1.33 0 1 1 0-2.66 1.33 1.33 0 0 1 0 2.66m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2m0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+        </div>
       </div>
       <div>
-        <h3>We're Here to Help</h3>
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#who-we-are">About Us</a></li>
+          <li><a href="#core-services">Services</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <ul class="footer-links">
+          <li><a href="pages/consulting.html">ISO Consulting</a></li>
+          <li><a href="pages/consulting.html#sustenance">Management Sustenance</a></li>
+          <li><a href="pages/third-party-inspection.html">Third-Party Inspection</a></li>
+          <li><a href="pages/business-transformation.html">Business Transformation</a></li>
+          <li><a href="pages/training.html">Industrial Training</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
         <div class="contact-line">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 5a2 2 0 0 1 2-2h2.5c.9 0 1.7.6 1.9 1.5l.6 2.5c.2.8-.1 1.6-.7 2.1l-1.3 1c.9 1.9 2.5 3.4 4.3 4.3l1-1.3c.5-.7 1.4-.9 2.1-.7l2.5.6c.9.2 1.5 1 1.5 1.9V18a2 2 0 0 1-2 2h-1C8.6 20 4 15.4 4 8V5h-1z" stroke="currentColor" stroke-width="1.5"></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 5a2 2 0 0 1 2-2h2.5c.9 0 1.7.6 1.9 1.5l.6 2.5c.2.8-.1 1.6-.7 2.1l-1.3 1c.9 1.9 2.5 3.4 4.3 4.3l1-1.3c.5-.7 1.4-.9 2.1-.7l2.5.6c.9.2 1.5 1 1.5 1.9V18a2 2 0 0 1-2 2h-1C8.6 20 4 15.4 4 8V5h-1z" stroke="currentColor" stroke-width="1.5"/></svg>
           <a href="tel:+919444084652">+91&nbsp;94440&nbsp;84652</a>
         </div>
         <div class="contact-line">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"><path d="m3 7 9 6 9-6" stroke="currentColor" stroke-width="1.5"></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="m3 7 9 6 9-6" stroke="currentColor" stroke-width="1.5"/></svg>
           <a href="mailto:info@marssigma.com">info@marssigma.com</a>
         </div>
-      </div>
-      <div>
-        <h3>Site</h3>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="pages/about.html">About</a></li>
-          <li><a href="pages/services.html">Services</a></li>
-          <li><a href="pages/industries.html">Industries</a></li>
-          <li><a href="pages/founder.html">Founder</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Expertise</h3>
-        <ul class="footer-links">
-          <li><a href="pages/iso-9001-2026.html">ISO 9001:2026</a></li>
-          <li><a href="pages/how-we-work.html">How We Work</a></li>
-          <li><a href="pages/contact.html">Contact</a></li>
-        </ul>
       </div>
     </div>
     <div class="footer-bottom">

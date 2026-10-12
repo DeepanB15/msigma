@@ -1,53 +1,58 @@
 /**
- * Mars Sigma Solutions — supplemental styles
- * Extends the Suretax design system (Ampersans, dark #020e12, #d2d7d5, #001d7c)
- * with styles for the new Mars Sigma content sections.
- * NOTE: copy-paste variable tokens are reused from the site stylesheet
- * (--black-3 #020e12, --light-grey #d2d7d5, --midnight-blue #001d7c, --silver #b4b8ad).
+ * Mars Sigma Solutions — Brand Styles
+ * Using brand colors from colourpalatte.jpeg:
+ * - Maroon Red: #7A1E26
+ * - Ink Blue: #0F2747
+ * - White: #FFFFFF
+ * - Neutral: #0A0F1A, #2B2B2B, #6B7280, #E5E7EB, #F8F876
  */
 
 :root {
-  --ms-dark: #020e12;
-  --ms-dark-2: #11262a;
-  --ms-accent: #001d7c;
-  --ms-light: #d2d7d5;
-  --ms-smoke: #f5f5f5;
-  --ms-silver: #b4b8ad;
+  /* Primary brand colors */
+  --maroon-red: #7A1E26;
+  --ink-blue: #0F2747;
+  --white: #FFFFFF;
+
+  /* Neutral colors */
+  --deep-navy-black: #0A0F1A;
+  --charcoal: #2B2B2B;
+  --slate-gray: #6B7280;
+  --light-gray: #E5E7EB;
+  --off-white: #F8F876;
 }
 
-/* ---------- Section scaffolding (matches .container / .large-hero rhythm) ---------- */
-
+/* ========== Section scaffolding ========== */
 .ms-section {
   padding: 6.25rem 0;
 }
 
 .ms-section.dark {
-  background-color: var(--ms-dark);
-  color: #fff;
+  background-color: var(--deep-navy-black);
+  color: var(--white);
 }
 
 .ms-section.light {
-  background-color: var(--ms-smoke);
-  color: #000;
+  background-color: var(--white);
+  color: var(--charcoal);
 }
 
 .ms-section.accent {
-  background-color: var(--ms-accent);
-  color: #fff;
+  background-color: var(--maroon-red);
+  color: var(--white);
 }
 
 .ms-eyebrow {
-  color: var(--ms-accent);
-  font-family: Ampersans, sans-serif;
+  color: var(--maroon-red);
   font-size: 0.875rem;
   letter-spacing: 0.125em;
   text-transform: uppercase;
   margin: 0 0 1rem;
+  font-weight: 600;
 }
 
 .ms-section.dark .ms-eyebrow,
 .ms-section.accent .ms-eyebrow {
-  color: var(--ms-light);
+  color: var(--light-gray);
 }
 
 .ms-lead {
@@ -57,15 +62,7 @@
   max-width: 46rem;
 }
 
-/* Optional running phrase under a section heading, e.g. "Our Six Core Services" */
-.ms-subhead {
-  font-family: Ampersans, sans-serif;
-  font-weight: 200;
-  font-size: 1.375rem;
-  letter-spacing: 0.04em;
-  margin: 0 0 2.5rem;
-}
-
+/* ========== Card grid ========== */
 .ms-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -80,14 +77,9 @@
   grid-template-columns: repeat(4, 1fr);
 }
 
-.ms-grid.ten {
-  grid-template-columns: repeat(5, 1fr);
-}
-
-/* ---------- Cards ---------- */
-
+/* ========== Cards ========== */
 .ms-card {
-  background: #fff;
+  background: var(--white);
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 0.75rem;
   padding: 2rem 1.75rem;
@@ -96,22 +88,19 @@
 
 .ms-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(2, 14, 18, 0.1);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
 }
 
 .ms-card .ms-card-num {
-  font-family: Ampersans, sans-serif;
   font-size: 0.8125rem;
   letter-spacing: 0.1em;
-  color: var(--ms-accent);
+  color: var(--maroon-red);
   margin-bottom: 1rem;
 }
 
 .ms-card h3 {
-  font-family: Ampersans, sans-serif;
   font-size: 1.25rem;
-  font-weight: 300;
-  line-height: 1.3;
+  font-weight: 600;
   margin: 0 0 1rem;
 }
 
@@ -121,6 +110,7 @@
   margin: 0 0 1.25rem;
 }
 
+/* ========== Tag list ========== */
 .ms-tags {
   list-style: none;
   padding: 0;
@@ -131,22 +121,18 @@
 }
 
 .ms-tags li {
-  font-family: Ampersans, sans-serif;
   font-size: 0.8125rem;
   padding: 0.35rem 0.75rem;
-  border: 1px solid var(--ms-light);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 6.25rem;
   white-space: nowrap;
 }
 
-.ms-section.dark .ms-card,
-.ms-section.accent .ms-card {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.12);
+.ms-section.dark .ms-tags li {
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
-/* ---------- ISO 9001:2026 transition steps (horizontal on desktop, vertical on mobile) ---------- */
-
+/* ========== ISO 9001:2026 transition steps ========== */
 .ms-steps {
   counter-reset: ms-step;
   display: grid;
@@ -163,28 +149,14 @@
 }
 
 .ms-step .ms-step-num {
-  font-family: Ampersans, sans-serif;
   font-size: 0.8125rem;
   letter-spacing: 0.1em;
-  color: var(--ms-light);
+  color: var(--light-gray);
   display: block;
   margin-bottom: 0.5rem;
 }
 
-/* ---------- "Why" minimal cards on light background ---------- */
-
-.ms-why .ms-card {
-  background: transparent;
-  border: 1px solid var(--ms-light);
-  padding: 1.75rem 1.5rem;
-}
-
-.ms-why .ms-card h3 {
-  font-size: 1.0625rem;
-}
-
-/* ---------- Industries image cards ---------- */
-
+/* ========== Industries image cards ========== */
 .ms-card.media {
   padding: 0;
   overflow: hidden;
@@ -211,11 +183,11 @@
   font-size: 0.9rem;
 }
 
-/* ---------- Standards grid ---------- */
-
+/* ========== Standards grid ========== */
 .ms-standards .ms-card {
   padding: 1.5rem 1.25rem;
   text-align: left;
+  background: var(--deep-navy-black);
 }
 
 .ms-standards .ms-card p {
@@ -224,14 +196,12 @@
   color: rgba(255, 255, 255, 0.75);
 }
 
-/* ---------- Client success cards (dark) ---------- */
-
+/* ========== Client success cards ========== */
 .ms-success .ms-card p {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* ---------- Founder ---------- */
-
+/* ========== Founder ========== */
 .ms-founder {
   display: grid;
   grid-template-columns: 2fr 3fr;
@@ -241,7 +211,7 @@
 
 .ms-founder .ms-card {
   background: transparent;
-  border: 1px solid var(--ms-light);
+  border: 1px solid var(--light-gray);
 }
 
 .ms-founder ul {
@@ -252,17 +222,13 @@
 
 .ms-founder ul li {
   padding: 0.75rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   font-size: 0.95rem;
 }
 
-/* ---------- Placeholder imagery ---------- */
-/* Self-contained CSS placeholders. Replace with real Mars Sigma photographs
-   by swapping the .ms-ph-* element for an <img> (alt text is already documented
-   in the alt text in the HTML comments where each placeholder is used). */
-
+/* ========== Placeholder imagery ========== */
 .ms-ph {
-  background: linear-gradient(135deg, var(--ms-dark-2), var(--ms-accent));
+  background: linear-gradient(135deg, var(--deep-navy-black), var(--ink-blue));
   position: relative;
   overflow: hidden;
 }
@@ -279,19 +245,17 @@
 }
 
 .ms-ph.warm {
-  background: linear-gradient(135deg, #232427, #020e12);
+  background: linear-gradient(135deg, #232427, #0A0F1A);
 }
 
 .ms-ph.light {
-  background: linear-gradient(135deg, var(--ms-light), #9aa5a1);
+  background: linear-gradient(135deg, var(--light-gray), #9aa5a1);
 }
 
-/* ---------- Mobile responsiveness ---------- */
-
+/* ========== Mobile responsiveness ========== */
 @media (max-width: 991px) {
   .ms-grid,
-  .ms-grid.four,
-  .ms-grid.ten {
+  .ms-grid.four {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -310,7 +274,6 @@
 }
 
 @media (max-width: 767px) {
-  /* ISO steps: vertical timeline on mobile, per content spec */
   .ms-steps {
     grid-template-columns: 1fr;
     gap: 0;
@@ -335,8 +298,7 @@
 
 @media (max-width: 479px) {
   .ms-grid,
-  .ms-grid.four,
-  .ms-grid.ten {
+  .ms-grid.four {
     grid-template-columns: 1fr;
   }
 

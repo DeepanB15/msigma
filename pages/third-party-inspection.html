@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Third-Party Inspection - Mars Sigma Solutions Pvt Ltd</title>
+<meta name="description" content="Third-Party Inspection services including Incoming, In-Process, Final, Pre-Dispatch, Vendor Inspection and Quality Manpower Deployment.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.prod.website-files.com" rel="preconnect" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com" rel="preconnect" crossorigin="anonymous">
+<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="../assets/css/main.css" rel="stylesheet" type="text/css">
+<style>
+:root {
+  --maroon-red: #7A1E26;
+  --ink-blue: #0F2747;
+  --deep-navy-black: #0A0F1A;
+  --charcoal: #2B2B2B;
+  --slate-gray: #6B7280;
+  --light-gray: #E5E7EB;
+}
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--charcoal);
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+img { border: 0; max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3, p { margin: 0; }
+ul { margin: 0; padding: 0; }
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(10, 15, 26, 0.95);
+  backdrop-filter: blur(8px);
+}
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.nav-logo {
+  color: #fff;
+  text-decoration: none;
+  font-family: Inter, sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  white-space: nowrap;
+}
+.nav-logo span { color: var(--slate-gray); font-weight: 300; }
+.nav-dropdown { position: relative; }
+.nav-dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%; left: 0;
+  background: var(--deep-navy-black);
+  min-width: 220px;
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+  padding: 0.75rem 0;
+  margin-top: 0.5rem;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.dropdown-menu .dropdown-item {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.9375rem;
+}
+.dropdown-menu .dropdown-item:hover { background: rgba(122, 30, 38, 0.15); color: var(--maroon-red); }
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: .9375rem;
+  opacity: .85;
+}
+.nav-link:hover { opacity: 1; color: var(--maroon-red); }
+.nav-link.active { opacity: 1; color: var(--maroon-red); font-weight: 500; }
+.nav-cta {
+  color: #000;
+  background: var(--maroon-red);
+  border-radius: 6.25rem;
+  padding: .7rem 1.5rem;
+  text-decoration: none;
+  font-size: .9375rem;
+  white-space: nowrap;
+}
+.nav-toggle { display: none; background: none; border: 0; cursor: pointer; padding: .5rem; }
+.nav-toggle span {
+  display: block;
+  width: 1.5rem; height: 2px;
+  background: #fff;
+  margin: 5px 0;
+}
+
+/* Page Hero */
+.page-hero {
+  background: var(--deep-navy-black);
+  padding: 10rem 0 5rem;
+  color: var(--white);
+}
+.page-hero .container h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.15;
+  max-width: 24ch;
+  margin-bottom: 1.5rem;
+}
+.page-hero .container p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+/* Content sections */
+.main-content { padding: 5rem 0; }
+.section-head { max-width: 46rem; margin-bottom: 2.5rem; }
+.section-head h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: var(--deep-navy-black);
+}
+.section-head p { font-size: 1rem; line-height: 1.7; color: var(--charcoal); }
+
+/* Card grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 1.75rem;
+  transition: all 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+.card h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--deep-navy-black);
+}
+.card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--charcoal);
+}
+
+/* Inspection scope */
+.inspection-scope {
+  margin-top: 2rem;
+}
+.scope-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+.scope-item .icon {
+  min-width: 48px;
+  height: 48px;
+  background: var(--maroon-red);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.scope-item .content h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--deep-navy-black);
+}
+.scope-item .content p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--charcoal);
+  margin: 0;
+}
+
+/* Quality reporting */
+.quality-card {
+  border: 2px solid var(--maroon-red);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+}
+.quality-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--maroon-red);
+  margin-bottom: 1rem;
+}
+
+/* Industries grid */
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.industry-card {
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.industry-card .media {
+  background: linear-gradient(135deg, #232427, #0A0F1A);
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.8);
+}
+.industry-card .caption {
+  padding: 1.25rem;
+}
+.industry-card .caption h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--deep-navy-black);
+}
+.industry-card .caption p {
+  font-size: 0.85rem;
+  color: var(--slate-gray);
+  margin: 0;
+}
+
+/* CTA Strip */
+.cta-strip {
+  padding: 4rem 0;
+  background: var(--maroon-red);
+  color: var(--white);
+  text-align: center;
+}
+.cta-strip h2 { font-size: 1.75rem; margin-bottom: 1.5rem; }
+.button {
+  background: var(--white);
+  color: var(--maroon-red);
+  padding: 1rem 2.5rem;
+  border-radius: 6.25rem;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+}
+.button:hover { background: var(--light-gray); }
+
+/* Footer */
+.footer {
+  background: var(--deep-navy-black);
+  color: var(--white);
+  padding: 4rem 0 2rem;
+}
+.footer h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 0.75rem; }
+.footer-links a {
+  color: var(--slate-gray);
+  text-decoration: none;
+}
+.footer-links a:hover { color: var(--maroon-red); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.875rem;
+  color: var(--slate-gray);
+}
+.footer-bottom nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.footer-bottom a { color: var(--slate-gray); text-decoration: none; }
+
+/* Responsive */
+@media (max-width: 991px) {
+  .nav-menu {
+    position: fixed;
+    top: 4.5rem; left: 0; right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background: var(--deep-navy-black);
+    padding: 1.5rem;
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .nav-menu-open { opacity: 1; pointer-events: auto; transform: translateY(0); }
+  .nav-link { width: 100%; padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .nav-toggle { display: block; }
+  .nav-cta { margin-left: 0; }
+  .page-hero h1 { font-size: 2.25rem; }
+  .card-grid { grid-template-columns: 1fr; }
+  .industry-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 767px) {
+  .card-grid { grid-template-columns: 1fr; }
+  .industry-grid { grid-template-columns: 1fr; }
+  .page-hero { padding: 6rem 0 3rem; }
+  .main-content { padding: 3.5rem 0; }
+}
+
+@media (max-width: 479px) {
+  .page-hero h1 { font-size: 1.75rem; }
+  .card-grid, .industry-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<header>
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">MARS SIGMA <span>SOLUTIONS</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span>
+      </button>
+      <div class="nav-menu" id="nav-menu">
+        <a class="nav-link" href="../index.html">Home</a>
+        <div class="nav-dropdown">
+          <a class="nav-link" href="business-transformation.html">Business Transformation<span style="font-size:0.75em; margin-left:0.25em;">▼</span></a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="business-transformation.html">Overview</a>
+            <a class="dropdown-item" href="business-transformation.html#organisational-restructuring">Organisational Restructuring</a>
+            <a class="dropdown-item" href="business-transformation.html#business-turnaround">Business Turnaround</a>
+            <a class="dropdown-item" href="business-transformation.html#process-systems">Process &amp; Systems</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a class="nav-link" href="consulting.html">Consulting<span style="font-size:0.75em; margin-left:0.25em;">▼</span></a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="consulting.html">Overview</a>
+            <a class="dropdown-item" href="consulting.html#certification">Certification Services</a>
+            <a class="dropdown-item" href="consulting.html#result-oriented">Result-Oriented Services</a>
+            <a class="dropdown-item" href="consulting.html#supplier-dev">Supplier Development</a>
+          </div>
+        </div>
+        <a class="nav-link active" href="third-party-inspection.html">Third Party Inspection</a>
+        <div class="nav-dropdown">
+          <a class="nav-link" href="training.html">Training<span style="font-size:0.75em; margin-left:0.25em;">▼</span></a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="training.html">Overview</a>
+            <a class="dropdown-item" href="training.html#awareness">Awareness</a>
+            <a class="dropdown-item" href="training.html#quality-check">Quality Check</a>
+            <a class="dropdown-item" href="training.html#excellence">Excellence Training</a>
+          </div>
+        </div>
+        <a class="nav-link" href="contact.html">Contact Us</a>
+        <a class="nav-cta" href="contact.html">Talk to Our Experts</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="page-hero">
+  <div class="container">
+    <h1>Third-Party Inspection Services</h1>
+    <p>Independent quality assurance through professional inspection and verification services.</p>
+  </div>
+</section>
+
+<!-- Introduction -->
+<section class="main-content" id="introduction">
+  <div class="container">
+    <div class="section-head">
+      <h2>Independent Quality Assurance</h2>
+      <p>
+        Protect your business from costly defects, rework, and customer complaints through
+        professional inspection and verification services. Our third-party inspection services
+        provide objective quality assurance at every stage of your supply chain.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Inspection Services -->
+<section class="main-content" id="inspection-services" style="background:var(--maroon-red); color:var(--white);">
+  <div class="container">
+    <div class="section-head" style="color:var(--white);">
+      <h2 style="color:var(--white);">Comprehensive Inspection Services</h2>
+    </div>
+    <div class="card-grid">
+      <article class="card" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2);">
+        <h3 style="color:var(--white);">Incoming Inspection</h3>
+        <p>Verify raw materials and components before they enter your production process.</p>
+      </article>
+      <article class="card" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2);">
+        <h3 style="color:var(--white);">In-Process Inspection</h3>
+        <p>Monitor production at critical stages to catch issues early and prevent defects.</p>
+      </article>
+      <article class="card" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2);">
+        <h3 style="color:var(--white);">Final Inspection</h3>
+        <p>Comprehensive quality check before products leave your facility or go to customers.</p>
+      </article>
+      <article class="card" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2);">
+        <h3 style="color:var(--white);">Pre-Dispatch Inspection</h3>
+        <p>Ensure shipment quality matches order requirements before products are dispatched.</p>
+      </article>
+      <article class="card" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2);">
+        <h3 style="color:var(--white);">Vendor Inspection</h3>
+        <p>Assess supplier quality systems and production capabilities at their facility.</p>
+      </article>
+      <article class="card" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2);">
+        <h3 style="color:var(--white);">Quality Manpower Deployment</h3>
+        <p>Deploy qualified inspectors to your production sites for ongoing quality oversight.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Inspection Process -->
+<section class="main-content" id="process">
+  <div class="container">
+    <div class="section-head">
+      <h2>Our Inspection Process</h2>
+      <p>A systematic approach to quality assurance at every stage.</p>
+    </div>
+    <div class="inspection-scope">
+      <div class="scope-item">
+        <div class="icon">1</div>
+        <div class="content">
+          <h4>Scope Definition</h4>
+          <p>We work with you to define inspection criteria, acceptable quality levels, and sampling standards based on your requirements.</p>
+        </div>
+      </div>
+      <div class="scope-item">
+        <div class="icon">2</div>
+        <div class="content">
+          <h4>Site Assessment</h4>
+          <p>Our inspectors evaluate the production environment, equipment, and quality control systems at the facility.</p>
+        </div>
+      </div>
+      <div class="scope-item">
+        <div class="icon">3</div>
+        <div class="content">
+          <h4>Sampling &amp; Testing</h4>
+          <p>We perform systematic sampling and testing according to industry standards and your specific requirements.</p>
+        </div>
+      </div>
+      <div class="scope-item">
+        <div class="icon">4</div>
+        <div class="content">
+          <h4>Reporting</h4>
+          <p>Detailed reports with findings, photographs, and recommendations for any non-conformances identified.</p>
+        </div>
+      </div>
+      <div class="scope-item">
+        <div class="icon">5</div>
+        <div class="content">
+          <h4>Corrective Actions</h4>
+          <p>Guidance on addressing identified issues and preventing recurrence through process improvements.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quality & Reporting -->
+<section class="main-content" id="quality">
+  <div class="container">
+    <div class="section-head">
+      <h2>Quality Reporting &amp; Analytics</h2>
+      <p>Transparent, data-driven insights for continuous improvement.</p>
+    </div>
+    <div class="card-grid">
+      <div class="quality-card">
+        <h3>Detailed Reports</h3>
+        <p>Comprehensive inspection reports with photographs, measurements, and clear findings.</p>
+      </div>
+      <div class="quality-card">
+        <h3>Trend Analysis</h3>
+        <p>Identify recurring issues and patterns across multiple inspections for targeted improvements.</p>
+      </div>
+      <div class="quality-card">
+        <h3>Compliance Verification</h3>
+        <p>Ensure products meet all relevant standards, regulations, and customer requirements.</p>
+      </div>
+      <div class="quality-card">
+        <h3>Real-Time Updates</h3>
+        <p>Immediate communication of critical issues for prompt decision-making.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Industries Served -->
+<section class="main-content" id="industries">
+  <div class="container">
+    <div class="section-head">
+      <h2>Industries We Serve</h2>
+      <p>Quality assurance tailored to your industry's unique requirements.</p>
+    </div>
+    <div class="industry-grid">
+      <article class="industry-card">
+        <div class="media">Manufacturing</div>
+        <div class="caption">
+          <h3>Manufacturing</h3>
+          <p>From raw materials to finished goods, we ensure quality at every stage.</p>
+        </div>
+      </article>
+      <article class="industry-card">
+        <div class="media">Automotive</div>
+        <div class="caption">
+          <h3>Automotive</h3>
+          <p>Meeting IATF 16949 requirements with rigorous quality inspection.</p>
+        </div>
+      </article>
+      <article class="industry-card">
+        <div class="media">Aerospace</div>
+        <div class="caption">
+          <h3>Aerospace</h3>
+          <p>Precision inspection for AS9100 compliance and safety-critical components.</p>
+        </div>
+      </article>
+      <article class="industry-card">
+        <div class="media">Electronics</div>
+        <div class="caption">
+          <h3>Electronics</h3>
+          <p>Quality assurance for sensitive components and complex assemblies.</p>
+        </div>
+      </article>
+      <article class="industry-card">
+        <div class="media">Construction</div>
+        <div class="caption">
+          <h3>Construction</h3>
+          <p>Material inspection and quality verification for building projects.</p>
+        </div>
+      </article>
+      <article class="industry-card">
+        <div class="media">Food & Beverage</div>
+        <div class="caption">
+          <h3>Food &amp; Beverage</h3>
+          <p>Quality and safety inspection for food processing and packaging.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-strip">
+  <div class="container">
+    <h2>Need Independent Quality Assurance?</h2>
+    <p style="margin-bottom:1.5rem;">Request our inspection services today.</p>
+    <a href="../contact.html" class="button">Request Inspection Service</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3>Mars Sigma Solutions</h3>
+        <p>Driving Quality. Transforming Businesses. Delivering Excellence.</p>
+        <p style="margin-top:0.5rem;">India | Bahrain</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="#inspection-services">Services</a></li>
+          <li><a href="#process">Inspection Process</a></li>
+          <li><a href="#industries">Industries</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Our Services</h3>
+        <ul class="footer-links">
+          <li><a href="business-transformation.html">Business Transformation</a></li>
+          <li><a href="consulting.html">Consulting</a></li>
+          <li><a href="training.html">Training</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact Us</h3>
+        <p style="margin-bottom:0.5rem;">+91 94440 84652</p>
+        <p style="margin-bottom:0.5rem;">info@marssigma.com</p>
+        <p>India | Bahrain</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Mars Sigma Solutions Pvt Ltd. All rights reserved.</div>
+      <nav aria-label="Legal">
+        <a href="../pages/privacy.html">Privacy</a>
+        <a href="../pages/terms.html">Terms</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var toggle = document.querySelector('.nav-toggle');
+  var menu = document.getElementById('nav-menu');
+  if (toggle && menu) {
+    toggle.addEventListener('click', function() {
+      var open = menu.classList.toggle('nav-menu-open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  }
+});
+</script>
+
+</body>
+</html>
