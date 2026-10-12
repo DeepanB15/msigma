@@ -5,10 +5,13 @@
 <title>About Us - Mars Sigma Solutions Pvt Ltd</title>
 <meta name="description" content="Mars Sigma Solutions Pvt Ltd is a professional consulting and industrial services organization helping businesses achieve excellence through management systems, process improvement and technical expertise.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="../assets/images/favicon.png">
 <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin="anonymous">
 <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="../assets/css/main.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/navbar.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/subpage.css" rel="stylesheet" type="text/css">
 <style>
 *, *::before, *::after { box-sizing: border-box; }
 :root { --black-3:#020e12; --black-4:#11262a; --light-grey:#d2d7d5; --midnight-blue:#001d7c; }
@@ -47,12 +50,14 @@ h1,h2,h3,p { margin:0; }
 }
 @media (min-width:992px){ .nav-toggle { display:none; } }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="../assets/js/scroll-smoother.js"></script>
 </head>
 <body>
 <header>
   <nav class="navbar" aria-label="Main navigation">
     <div class="nav-container">
-      <a href="../index.html" class="nav-logo" aria-label="Mars Sigma Solutions — Home">MARS SIGMA <span>SOLUTIONS</span></a>
+      <a href="index.html" class="nav-logo" aria-label="Mars Sigma Solutions — Home"><img src="../assets/images/logo.jpg" alt="Mars Sigma" style="height:2rem;width:auto;display:block;"></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu"><span></span><span></span></button>
       <div class="nav-menu" id="nav-menu">
         <a class="nav-link" href="../index.html">Home</a>
@@ -110,12 +115,8 @@ h1,h2,h3,p { margin:0; }
   </div>
 </main>
 
-<footer class="footer">
-  <div class="container footer-bottom">
-    <div>© 2026 Mars Sigma Solutions Pvt Ltd. All rights reserved.</div>
-    <nav aria-label="Legal"><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></nav>
-  </div>
-</footer>
+<div id="site-footer"></div>
+<script src="../assets/js/components.js" defer></script>
 
 <script src="../assets/js/main.js" defer></script>
 </body>

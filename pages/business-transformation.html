@@ -5,11 +5,14 @@
 <title>Business Transformation - Mars Sigma Solutions Pvt Ltd</title>
 <meta name="description" content="Business Transformation services including Organisational Restructuring, Business Turnaround, and Process & Systems improvement.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="../assets/images/favicon.png">
 <link href="https://cdn.prod.website-files.com" rel="preconnect" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin="anonymous">
 <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="../assets/css/main.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/navbar.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/subpage.css" rel="stylesheet" type="text/css">
 <style>
 :root {
   --maroon-red: #7A1E26;
@@ -356,6 +359,8 @@ ul { margin: 0; padding: 0; }
   .footer-bottom { flex-direction: column; text-align: center; gap: 1rem; }
 }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="../assets/js/scroll-smoother.js"></script>
 </head>
 <body>
 
@@ -363,40 +368,16 @@ ul { margin: 0; padding: 0; }
 <header>
   <nav class="navbar" aria-label="Main navigation">
     <div class="nav-container">
-      <a href="../index.html" class="nav-logo">MARS SIGMA <span>SOLUTIONS</span></a>
+      <a href="index.html" class="nav-logo" aria-label="Mars Sigma Solutions — Home"><img src="../assets/images/logo.jpg" alt="Mars Sigma" style="height:2rem;width:auto;display:block;"></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
         <span></span><span></span>
       </button>
       <div class="nav-menu" id="nav-menu">
         <a class="nav-link" href="../index.html">Home</a>
-        <div class="nav-dropdown">
-          <a class="nav-link active" href="business-transformation.html">Business Transformation<span style="font-size:0.75em; margin-left:0.25em;">▼</span></a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item active" href="business-transformation.html">Overview</a>
-            <a class="dropdown-item" href="#organisational-restructuring">Organisational Restructuring</a>
-            <a class="dropdown-item" href="#business-turnaround">Business Turnaround</a>
-            <a class="dropdown-item" href="#process-systems">Process &amp; Systems</a>
-          </div>
-        </div>
-        <div class="nav-dropdown">
-          <a class="nav-link" href="consulting.html">Consulting<span style="font-size:0.75em; margin-left:0.25em;">▼</span></a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="consulting.html">Overview</a>
-            <a class="dropdown-item" href="#certification">Certification Services</a>
-            <a class="dropdown-item" href="#result-oriented">Result-Oriented Services</a>
-            <a class="dropdown-item" href="#supplier-dev">Supplier Development</a>
-          </div>
-        </div>
+        <a class="nav-link active" href="business-transformation.html">Business Transformation</a>
+        <a class="nav-link" href="consulting.html">Consulting</a>
         <a class="nav-link" href="third-party-inspection.html">Third Party Inspection</a>
-        <div class="nav-dropdown">
-          <a class="nav-link" href="training.html">Training<span style="font-size:0.75em; margin-left:0.25em;">▼</span></a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="training.html">Overview</a>
-            <a class="dropdown-item" href="#awareness">Awareness</a>
-            <a class="dropdown-item" href="#quality-check">Quality Check</a>
-            <a class="dropdown-item" href="#excellence">Excellence Training</a>
-          </div>
-        </div>
+        <a class="nav-link" href="training.html">Training</a>
         <a class="nav-link" href="contact.html">Contact Us</a>
         <a class="nav-cta" href="contact.html">Talk to Our Experts</a>
       </div>
@@ -404,11 +385,76 @@ ul { margin: 0; padding: 0; }
   </nav>
 </header>
 
-<!-- Hero Section -->
-<section class="page-hero">
+<!-- Hero Section with Video Background -->
+<section class="page-hero video-hero" style="position:relative; padding:0; min-height:550px; overflow:hidden;">
+  <div style="position:absolute; inset:0; overflow:hidden; z-index:0;">
+    <video autoplay muted loop playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.7;">
+      <source src="../assets/videos/gemini_generated_video_3e5a24e6.mp4" type="video/mp4">
+      <source src="../marssigmasolutions-website/assets/videos/gemini_generated_video_3e5a24e6.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div style="position:absolute; inset:0; background:linear-gradient(135deg,rgba(10,15,26,0.95) 0%,rgba(10,15,26,0.6) 50%,transparent 100%); pointer-events:none; z-index:1;"></div>
+  <div class="container" style="position:relative; z-index:2; padding-top:10rem; padding-bottom:5rem;">
+    <h1 style="font-size:3.5rem; font-weight:300; line-height:1.15; max-width:28ch; margin-bottom:1.5rem; color:#fff;">Business Transformation &amp; Operational Excellence</h1>
+    <p style="font-size:1.125rem; line-height:1.6; color:rgba(255,255,255,0.85);">Transform your business performance through strategic change, process optimization, and culture transformation.</p>
+  </div>
+</section>
+
+<!-- Methodology Cards with Images -->
+<section class="main-content" style="background:var(--deep-navy-black); color:var(--white);">
   <div class="container">
-    <h1>Business Transformation &amp; Operational Excellence</h1>
-    <p>Transform your business performance through strategic change, process optimization, and culture transformation.</p>
+    <div class="section-head" style="text-align:center;">
+      <div class="hero-eyebrow" style="color:#64aaff; letter-spacing:0.18em;">OUR METHODOLOGY</div>
+      <h2 style="color:#fff; font-size:2.5rem;">TRANSFORMATION PROCESS</h2>
+    </div>
+    <div class="showcase-slider" style="display:flex; gap:1.5rem; padding:2rem 0; overflow-x:auto; scrollbar-width:none;">
+      <div class="showcase-card" style="flex:0 0 240px; scroll-snap-align:start; background:rgba(10,15,30,0.9); border:1px solid rgba(60,100,220,0.3); border-radius:12px; overflow:hidden; transition:transform 0.4s ease;">
+        <div class="showcase-card-img" style="position:relative; height:160px; overflow:hidden;">
+          <img src="../img/bt_card_1.png" alt="Assessment" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <div class="showcase-card-content" style="padding:1.25rem;">
+          <div class="showcase-card-label" style="font-size:0.7rem; font-weight:700; letter-spacing:0.16em; color:#64aaff; text-transform:uppercase; margin-bottom:0.4rem;">METHODOLOGY</div>
+          <div class="showcase-card-title" style="font-size:1.1rem; font-weight:700; line-height:1.2; color:#fff;">ASSESSMENT</div>
+        </div>
+      </div>
+      <div class="showcase-card" style="flex:0 0 240px; scroll-snap-align:start; background:rgba(10,15,30,0.9); border:1px solid rgba(60,100,220,0.3); border-radius:12px; overflow:hidden; transition:transform 0.4s ease; margin-top:40px;">
+        <div class="showcase-card-img" style="position:relative; height:160px; overflow:hidden;">
+          <img src="../img/bt_card_2.png" alt="Analysis" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <div class="showcase-card-content" style="padding:1.25rem;">
+          <div class="showcase-card-label" style="font-size:0.7rem; font-weight:700; letter-spacing:0.16em; color:#64aaff; text-transform:uppercase; margin-bottom:0.4rem;">METHODOLOGY</div>
+          <div class="showcase-card-title" style="font-size:1.1rem; font-weight:700; line-height:1.2; color:#fff;">ANALYSIS</div>
+        </div>
+      </div>
+      <div class="showcase-card" style="flex:0 0 240px; scroll-snap-align:start; background:rgba(10,15,30,0.9); border:1px solid rgba(60,100,220,0.3); border-radius:12px; overflow:hidden; transition:transform 0.4s ease; margin-top:-40px;">
+        <div class="showcase-card-img" style="position:relative; height:160px; overflow:hidden;">
+          <img src="../img/bt_card_3.png" alt="Strategy" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <div class="showcase-card-content" style="padding:1.25rem;">
+          <div class="showcase-card-label" style="font-size:0.7rem; font-weight:700; letter-spacing:0.16em; color:#64aaff; text-transform:uppercase; margin-bottom:0.4rem;">METHODOLOGY</div>
+          <div class="showcase-card-title" style="font-size:1.1rem; font-weight:700; line-height:1.2; color:#fff;">STRATEGY</div>
+        </div>
+      </div>
+      <div class="showcase-card" style="flex:0 0 240px; scroll-snap-align:start; background:rgba(10,15,30,0.9); border:1px solid rgba(60,100,220,0.3); border-radius:12px; overflow:hidden; transition:transform 0.4s ease;">
+        <div class="showcase-card-img" style="position:relative; height:160px; overflow:hidden;">
+          <img src="../img/bt_card_4.png" alt="Implementation" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <div class="showcase-card-content" style="padding:1.25rem;">
+          <div class="showcase-card-label" style="font-size:0.7rem; font-weight:700; letter-spacing:0.16em; color:#64aaff; text-transform:uppercase; margin-bottom:0.4rem;">METHODOLOGY</div>
+          <div class="showcase-card-title" style="font-size:1.1rem; font-weight:700; line-height:1.2; color:#fff;">IMPLEMENTATION</div>
+        </div>
+      </div>
+      <div class="showcase-card" style="flex:0 0 240px; scroll-snap-align:start; background:rgba(10,15,30,0.9); border:1px solid rgba(60,100,220,0.3); border-radius:12px; overflow:hidden; transition:transform 0.4s ease; margin-top:40px;">
+        <div class="showcase-card-img" style="position:relative; height:160px; overflow:hidden;">
+          <img src="../img/bt_card_5.png" alt="Sustain" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <div class="showcase-card-content" style="padding:1.25rem;">
+          <div class="showcase-card-label" style="font-size:0.7rem; font-weight:700; letter-spacing:0.16em; color:#64aaff; text-transform:uppercase; margin-bottom:0.4rem;">METHODOLOGY</div>
+          <div class="showcase-card-title" style="font-size:1.1rem; font-weight:700; line-height:1.2; color:#fff;">SUSTAIN</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -556,28 +602,28 @@ ul { margin: 0; padding: 0; }
     </div>
     <div class="card-grid">
       <article class="industry-card">
-        <div class="media">Manufacturing</div>
+        <div class="media" style="background-image:url('../img/Engineering & Manufacturing.jpg.jpeg'); background-size:cover; background-position:center;"></div>
         <div class="caption">
           <h3>Manufacturing</h3>
           <p>Improve production efficiency, reduce waste, and enhance quality through Lean and Six Sigma methodologies.</p>
         </div>
       </article>
       <article class="industry-card">
-        <div class="media">Automotive</div>
+        <div class="media" style="background-image:url('../img/Automotive & Auto Components.jpg.jpeg'); background-size:cover; background-position:center;"></div>
         <div class="caption">
           <h3>Automotive</h3>
           <p>Meet stringent quality requirements while optimizing costs and improving delivery performance.</p>
         </div>
       </article>
       <article class="industry-card">
-        <div class="media">IT & Services</div>
+        <div class="media" style="background-image:url('../img/IT & Service Organizations.jpg.jpeg'); background-size:cover; background-position:center;"></div>
         <div class="caption">
-          <h3>IT &amp; Services</h3>
+          <h3>IT & Services</h3>
           <p>Streamline service delivery, improve customer satisfaction, and enhance operational efficiency.</p>
         </div>
       </article>
       <article class="industry-card">
-        <div class="media">Healthcare</div>
+        <div class="media" style="background-image:url('../img/Process & Industrial Sectors.jpg.jpeg'); background-size:cover; background-position:center;"></div>
         <div class="caption">
           <h3>Healthcare</h3>
           <p>Improve patient outcomes, reduce costs, and enhance regulatory compliance through process optimization.</p>
@@ -619,53 +665,12 @@ ul { margin: 0; padding: 0; }
   <div class="container">
     <h2>Ready to Transform Your Business?</h2>
     <p style="margin-bottom:1.5rem;">Discuss your transformation needs with our experts today.</p>
-    <a href="../contact.html" class="button">Discuss Your Transformation</a>
   </div>
 </section>
 
 <!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <h3>Mars Sigma Solutions</h3>
-        <p>Driving Quality. Transforming Businesses. Delivering Excellence.</p>
-        <p style="margin-top:0.5rem;">India | Bahrain</p>
-      </div>
-      <div>
-        <h3>Quick Links</h3>
-        <ul class="footer-links">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="#organisational-restructuring">Organisational Restructuring</a></li>
-          <li><a href="#business-turnaround">Business Turnaround</a></li>
-          <li><a href="#process-systems">Process &amp; Systems</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Our Services</h3>
-        <ul class="footer-links">
-          <li><a href="consulting.html">Consulting</a></li>
-          <li><a href="third-party-inspection.html">Third-Party Inspection</a></li>
-          <li><a href="training.html">Training</a></li>
-          <li><a href="#industries">Industries</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Contact Us</h3>
-        <p style="margin-bottom:0.5rem;">+91 94440 84652</p>
-        <p style="margin-bottom:0.5rem;">info@marssigma.com</p>
-        <p>India | Bahrain</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div>© 2026 Mars Sigma Solutions Pvt Ltd. All rights reserved.</div>
-      <nav aria-label="Legal">
-        <a href="../pages/privacy.html">Privacy</a>
-        <a href="../pages/terms.html">Terms</a>
-      </nav>
-    </div>
-  </div>
-</footer>
+<div id="site-footer"></div>
+<script src="../assets/js/components.js" defer></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

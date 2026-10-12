@@ -19,6 +19,18 @@
   --slate-gray: #6B7280;
   --light-gray: #E5E7EB;
   --off-white: #F8F876;
+
+  /* C1-inspired monochrome / grayscale */
+  --black: #0a0a0a;
+  --black-rich: #141414;
+  --black-card: #141414;
+  --gray-900: #171717;
+  --gray-800: #262626;
+  --gray-700: #404040;
+  --gray-500: #737373;
+  --gray-300: #d4d4d4;
+  --gray-200: #e5e5e5;
+  --gray-100: #f5f5f5;
 }
 
 /* ========== Section scaffolding ========== */
@@ -42,12 +54,12 @@
 }
 
 .ms-eyebrow {
-  color: var(--maroon-red);
+  color: var(--maroon-red, #7A1E26);
   font-size: 0.875rem;
   letter-spacing: 0.125em;
   text-transform: uppercase;
   margin: 0 0 1rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .ms-section.dark .ms-eyebrow,
@@ -80,21 +92,23 @@
 /* ========== Cards ========== */
 .ms-card {
   background: var(--white);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 0.75rem;
   padding: 2rem 1.75rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
 }
 
 .ms-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
 
 .ms-card .ms-card-num {
   font-size: 0.8125rem;
   letter-spacing: 0.1em;
-  color: var(--maroon-red);
+  color: var(--black, #0a0a0a);
+  font-weight: 700;
   margin-bottom: 1rem;
 }
 
@@ -102,12 +116,14 @@
   font-size: 1.25rem;
   font-weight: 600;
   margin: 0 0 1rem;
+  color: var(--black, #0a0a0a);
 }
 
 .ms-card p {
   font-size: 0.95rem;
   line-height: 1.6;
   margin: 0 0 1.25rem;
+  color: var(--gray-700, #404040);
 }
 
 /* ========== Tag list ========== */
@@ -126,6 +142,8 @@
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 6.25rem;
   white-space: nowrap;
+  background: #fafafa;
+  color: var(--charcoal, #2B2B2B);
 }
 
 .ms-section.dark .ms-tags li {
@@ -252,6 +270,271 @@
   background: linear-gradient(135deg, var(--light-gray), #9aa5a1);
 }
 
+/* ========== Hero Section with Image ========== */
+.hero-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(20%) brightness(0.6);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(10, 15, 26, 0.92) 0%,
+    rgba(10, 15, 26, 0.4) 50%,
+    transparent 100%
+  );
+}
+
+/* ========== Service Panel with Image ========== */
+.service-panel {
+  display: grid;
+  grid-template-columns: 1fr 500px;
+  gap: 0;
+  margin: 3rem 0;
+  align-items: stretch;
+}
+
+.service-panel-content {
+  padding: 4rem 2rem;
+  background: var(--white);
+}
+
+.service-panel-image {
+  position: relative;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.service-panel-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(20%) brightness(0.7);
+  transition: all 0.5s ease;
+}
+
+.service-panel:hover .service-panel-image img {
+  filter: grayscale(0%) brightness(0.85);
+  transform: scale(1.05);
+}
+
+.service-panel--alt {
+  grid-template-columns: 500px 1fr;
+  direction: rtl;
+}
+
+.service-panel--alt .service-panel-content {
+  direction: ltr;
+}
+
+/* ========== Showcase Cards ========== */
+.showcase-section {
+  padding: 6rem 0;
+  background: linear-gradient(180deg, #020508 0%, #050e28 100%);
+  overflow: hidden;
+}
+
+.showcase-slider {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.showcase-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.showcase-card {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  background: rgba(10, 15, 30, 0.8);
+  border: 1px solid rgba(60, 100, 220, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.4s ease, border-color 0.4s;
+}
+
+.showcase-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(122, 30, 38, 0.5);
+}
+
+.showcase-card-img {
+  position: relative;
+  height: 50%;
+  overflow: hidden;
+}
+
+.showcase-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.showcase-card:hover .showcase-card-img img {
+  transform: scale(1.1);
+}
+
+.showcase-card-content {
+  padding: 1.5rem;
+}
+
+.showcase-card-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #64aaff;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.showcase-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+}
+
+/* ========== Video Hero ========== */
+.video-hero {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.video-hero iframe,
+.video-hero video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.video-hero-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  padding: 8rem 0;
+  background: linear-gradient(
+    to right,
+    rgba(10, 15, 26, 0.95) 0%,
+    rgba(10, 15, 26, 0.6) 60%,
+    transparent 100%
+  );
+}
+
+/* ========== Founder Portrait ========== */
+.founder-portrait {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.founder-image {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.founder-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.founder-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10, 15, 26, 0.9);
+  padding: 1.5rem;
+  text-align: center;
+  color: #fff;
+}
+
+.founder-caption h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.founder-caption span {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ========== Background Pattern Overlay ========== */
+.pattern-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.03) 0 1px,
+    transparent 1px 40px
+  );
+  pointer-events: none;
+}
+
+/* ========== CTA with Background Image ========== */
+.cta-section {
+  position: relative;
+  padding: 6rem 0;
+  background: linear-gradient(135deg, var(--maroon-red), var(--ink-blue));
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/cta-bg-blue.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+/* ========== Mobile Responsive for Images ========== */
+@media (max-width: 991px) {
+  .service-panel {
+    grid-template-columns: 1fr;
+  }
+  .service-panel-image {
+    min-height: 300px;
+  }
+  .founder-portrait {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .showcase-card {
+    flex: 0 0 100%;
+  }
+  .hero-image {
+    object-position: center center;
+  }
+}
+
 /* ========== Mobile responsiveness ========== */
 @media (max-width: 991px) {
   .ms-grid,
@@ -306,3 +589,11 @@
     padding: 3.5rem 0;
   }
 }
+/** C1 fonts */ body{font-family:'Montserrat',sans-serif!important;} h1,h2,h3,h4,h5,h6{font-family:'Playfair Display',serif!important;}
+/* C1 animation effects */
+.ms-card, .card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.ms-card:hover, .card:hover { transform: translateY(-4px); }
+/* C1 typography — applies globally to all pages via main.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+body { font-family: 'Montserrat', sans-serif !important; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif !important; }

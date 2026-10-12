@@ -5,11 +5,14 @@
 <title>Contact Us - Mars Sigma Solutions Pvt Ltd</title>
 <meta name="description" content="Contact Mars Sigma Solutions for ISO Management Systems, Business Transformation, Third-Party Inspection, Supplier Development or Industrial Training.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="../assets/images/favicon.png">
 <link href="https://cdn.prod.website-files.com" rel="preconnect" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin="anonymous">
 <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="../assets/css/main.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/navbar.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/subpage.css" rel="stylesheet" type="text/css">
 <style>
 :root {
   --maroon-red: #7A1E26;
@@ -365,6 +368,8 @@ ul { margin: 0; padding: 0; }
   .footer-bottom { flex-direction: column; text-align: center; gap: 1rem; }
 }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="../assets/js/scroll-smoother.js"></script>
 </head>
 <body>
 
@@ -372,40 +377,16 @@ ul { margin: 0; padding: 0; }
 <header>
   <nav class="navbar" aria-label="Main navigation">
     <div class="nav-container">
-      <a href="../index.html" class="nav-logo">MARS SIGMA <span>SOLUTIONS</span></a>
+      <a href="index.html" class="nav-logo" aria-label="Mars Sigma Solutions — Home"><img src="../assets/images/logo.jpg" alt="Mars Sigma" style="height:2rem;width:auto;display:block;"></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
         <span></span><span></span>
       </button>
       <div class="nav-menu" id="nav-menu">
         <a class="nav-link" href="../index.html">Home</a>
-        <div class="nav-dropdown">
-          <a class="nav-link" href="business-transformation.html">Business Transformation<span style="font-size:0.75em; margin-left:0.25em;">▼</span></a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="business-transformation.html">Overview</a>
-            <a class="dropdown-item" href="business-transformation.html#organisational-restructuring">Organisational Restructuring</a>
-            <a class="dropdown-item" href="business-transformation.html#business-turnaround">Business Turnaround</a>
-            <a class="dropdown-item" href="business-transformation.html#process-systems">Process &amp; Systems</a>
-          </div>
-        </div>
-        <div class="nav-dropdown">
-          <a class="nav-link" href="consulting.html">Consulting<span style="font-size:0.75em; margin-left:0.25em;">▼</span></a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="consulting.html">Overview</a>
-            <a class="dropdown-item" href="consulting.html#certification">Certification Services</a>
-            <a class="dropdown-item" href="consulting.html#result-oriented">Result-Oriented Services</a>
-            <a class="dropdown-item" href="consulting.html#supplier-dev">Supplier Development</a>
-          </div>
-        </div>
+        <a class="nav-link" href="business-transformation.html">Business Transformation</a>
+        <a class="nav-link" href="consulting.html">Consulting</a>
         <a class="nav-link" href="third-party-inspection.html">Third Party Inspection</a>
-        <div class="nav-dropdown">
-          <a class="nav-link" href="training.html">Training<span style="font-size:0.75em; margin-left:0.25em;">▼</span></a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="training.html">Overview</a>
-            <a class="dropdown-item" href="training.html#awareness">Awareness</a>
-            <a class="dropdown-item" href="training.html#quality-check">Quality Check</a>
-            <a class="dropdown-item" href="training.html#excellence">Excellence Training</a>
-          </div>
-        </div>
+        <a class="nav-link" href="training.html">Training</a>
         <a class="nav-link active" href="contact.html">Contact Us</a>
         <a class="nav-cta" href="contact.html">Talk to Our Experts</a>
       </div>
@@ -545,50 +526,8 @@ ul { margin: 0; padding: 0; }
 </section>
 
 <!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <h3>Mars Sigma Solutions</h3>
-        <p>Driving Quality. Transforming Businesses. Delivering Excellence.</p>
-        <p style="margin-top:0.5rem;">India | Bahrain</p>
-      </div>
-      <div>
-        <h3>Quick Links</h3>
-        <ul class="footer-links">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../index.html#who-we-are">About Us</a></li>
-          <li><a href="../index.html#core-services">Services</a></li>
-          <li><a href="../index.html#industries">Industries</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Our Services</h3>
-        <ul class="footer-links">
-          <li><a href="business-transformation.html">Business Transformation</a></li>
-          <li><a href="consulting.html">Consulting</a></li>
-          <li><a href="third-party-inspection.html">Third-Party Inspection</a></li>
-          <li><a href="training.html">Training</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Contact</h3>
-        <ul class="footer-links">
-          <li><a href="tel:+919444084652">+91 94440 84652</a></li>
-          <li><a href="mailto:info@marssigma.com">info@marssigma.com</a></li>
-          <li>India | Bahrain</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div>© 2026 Mars Sigma Solutions Pvt Ltd. All rights reserved.</div>
-      <nav aria-label="Legal">
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-      </nav>
-    </div>
-  </div>
-</footer>
+<div id="site-footer"></div>
+<script src="../assets/js/components.js" defer></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

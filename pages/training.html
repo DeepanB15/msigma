@@ -5,11 +5,14 @@
 <title>Industrial Training - Mars Sigma Solutions Pvt Ltd</title>
 <meta name="description" content="Industrial Training services including Awareness, Quality Check, and Excellence-Related Training programs.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="../assets/images/favicon.png">
 <link href="https://cdn.prod.website-files.com" rel="preconnect" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin="anonymous">
 <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="../assets/css/main.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/navbar.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/subpage.css" rel="stylesheet" type="text/css">
 <style>
 :root {
   --maroon-red: #7A1E26;
@@ -360,6 +363,8 @@ ul { margin: 0; padding: 0; }
   .footer-bottom { flex-direction: column; text-align: center; gap: 1rem; }
 }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="../assets/js/scroll-smoother.js"></script>
 </head>
 <body>
 
@@ -367,40 +372,16 @@ ul { margin: 0; padding: 0; }
 <header>
   <nav class="navbar" aria-label="Main navigation">
     <div class="nav-container">
-      <a href="../index.html" class="nav-logo">MARS SIGMA <span>SOLUTIONS</span></a>
+      <a href="index.html" class="nav-logo" aria-label="Mars Sigma Solutions — Home"><img src="../assets/images/logo.jpg" alt="Mars Sigma" style="height:2rem;width:auto;display:block;"></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
         <span></span><span></span>
       </button>
       <div class="nav-menu" id="nav-menu">
         <a class="nav-link" href="../index.html">Home</a>
-        <div class="nav-dropdown">
-          <a class="nav-link" href="business-transformation.html">Business Transformation<span style="font-size:0.75em; margin-left:0.25em;">▼</span></a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="business-transformation.html">Overview</a>
-            <a class="dropdown-item" href="business-transformation.html#organisational-restructuring">Organisational Restructuring</a>
-            <a class="dropdown-item" href="business-transformation.html#business-turnaround">Business Turnaround</a>
-            <a class="dropdown-item" href="business-transformation.html#process-systems">Process &amp; Systems</a>
-          </div>
-        </div>
-        <div class="nav-dropdown">
-          <a class="nav-link" href="consulting.html">Consulting<span style="font-size:0.75em; margin-left:0.25em;">▼</span></a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="consulting.html">Overview</a>
-            <a class="dropdown-item" href="consulting.html#certification">Certification Services</a>
-            <a class="dropdown-item" href="consulting.html#result-oriented">Result-Oriented Services</a>
-            <a class="dropdown-item" href="consulting.html#supplier-dev">Supplier Development</a>
-          </div>
-        </div>
+        <a class="nav-link" href="business-transformation.html">Business Transformation</a>
+        <a class="nav-link" href="consulting.html">Consulting</a>
         <a class="nav-link" href="third-party-inspection.html">Third Party Inspection</a>
-        <div class="nav-dropdown">
-          <a class="nav-link active" href="training.html">Training<span style="font-size:0.75em; margin-left:0.25em;">▼</span></a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item active" href="training.html">Overview</a>
-            <a class="dropdown-item" href="#awareness">Awareness</a>
-            <a class="dropdown-item" href="#quality-check">Quality Check</a>
-            <a class="dropdown-item" href="#excellence">Excellence Training</a>
-          </div>
-        </div>
+        <a class="nav-link active" href="training.html">Training</a>
         <a class="nav-link" href="contact.html">Contact Us</a>
         <a class="nav-cta" href="contact.html">Talk to Our Experts</a>
       </div>
@@ -408,11 +389,15 @@ ul { margin: 0; padding: 0; }
   </nav>
 </header>
 
-<!-- Hero Section -->
-<section class="page-hero">
-  <div class="container">
-    <h1>Industrial Training &amp; Competency Development</h1>
-    <p>Develop competent professionals and high-performing teams through practical, industry-focused training.</p>
+<!-- Hero Section with Image Background -->
+<section class="page-hero video-hero" style="position:relative; padding:0; min-height:550px; overflow:hidden;">
+  <div style="position:absolute; inset:0; overflow:hidden; z-index:0;">
+    <img src="../img/hero-suits-indian-hd.png" alt="Industrial Training & Competency Development" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; filter:grayscale(20%) brightness(0.6);">
+  </div>
+  <div style="position:absolute; inset:0; background:linear-gradient(135deg,rgba(10,15,26,0.95) 0%,rgba(10,15,26,0.6) 50%,transparent 100%); pointer-events:none; z-index:1;"></div>
+  <div class="container" style="position:relative; z-index:2; padding-top:10rem; padding-bottom:5rem;">
+    <h1 style="font-size:3.5rem; font-weight:300; line-height:1.15; max-width:28ch; margin-bottom:1.5rem; color:#fff;">Industrial Training &amp; Competency Development</h1>
+    <p style="font-size:1.125rem; line-height:1.6; color:rgba(255,255,255,0.85);">Develop competent professionals and high-performing teams through practical, industry-focused training.</p>
   </div>
 </section>
 
@@ -438,9 +423,7 @@ ul { margin: 0; padding: 0; }
     </div>
     <div class="training-grid">
       <article class="training-card">
-        <div class="media">
-          <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-        </div>
+        <div class="media" style="background-image:url('../img/iso.png'); background-size:cover; background-position:center; height:140px;"></div>
         <div class="caption">
           <h3>Management Systems Awareness</h3>
           <p>Introduction to quality, environmental, and safety management systems for all employees.</p>
@@ -453,9 +436,7 @@ ul { margin: 0; padding: 0; }
         </div>
       </article>
       <article class="training-card">
-        <div class="media">
-          <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
-        </div>
+        <div class="media" style="background-image:url('../img/lean-blue.png'); background-size:cover; background-position:center; height:140px;"></div>
         <div class="caption">
           <h3>Industry-Specific Awareness</h3>
           <p>Understanding industry requirements, regulations, and best practices.</p>
@@ -468,9 +449,7 @@ ul { margin: 0; padding: 0; }
         </div>
       </article>
       <article class="training-card">
-        <div class="media">
-          <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
-        </div>
+        <div class="media" style="background-image:url('../img/hero_boardroom_audit.png'); background-size:cover; background-position:center; height:140px;"></div>
         <div class="caption">
           <h3>Safety Awareness</h3>
           <p>Essential safety awareness for all employees and workplace hazards.</p>
@@ -495,9 +474,7 @@ ul { margin: 0; padding: 0; }
     </div>
     <div class="training-grid">
       <article class="training-card">
-        <div class="media">
-          <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
-        </div>
+        <div class="media" style="background-image:url('../img/iso-blue.png'); background-size:cover; background-position:center; height:140px;"></div>
         <div class="caption">
           <h3>Internal Auditing</h3>
           <p>Training to conduct effective internal audits of management systems.</p>
@@ -510,9 +487,7 @@ ul { margin: 0; padding: 0; }
         </div>
       </article>
       <article class="training-card">
-        <div class="media">
-          <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-        </div>
+        <div class="media" style="background-image:url('../img/tpi-blue.png'); background-size:cover; background-position:center; height:140px;"></div>
         <div class="caption">
           <h3>Quality Inspection Techniques</h3>
           <p>Practical training in inspection methods and quality verification.</p>
@@ -525,9 +500,7 @@ ul { margin: 0; padding: 0; }
         </div>
       </article>
       <article class="training-card">
-        <div class="media">
-          <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1l-8 4v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-8-4zm0 10.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-        </div>
+        <div class="media" style="background-image:url('../img/hero-suits-indian.png'); background-size:cover; background-position:center; height:140px;"></div>
         <div class="caption">
           <h3>Non-Conformance Management</h3>
           <p>Identifying, documenting, and resolving quality issues effectively.</p>
@@ -551,9 +524,7 @@ ul { margin: 0; padding: 0; }
     </div>
     <div class="training-grid">
       <article class="training-card">
-        <div class="media">
-          <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-        </div>
+        <div class="media" style="background-image:url('../img/lean.png'); background-size:cover; background-position:center; height:140px;"></div>
         <div class="caption">
           <h3>Lean Manufacturing</h3>
           <p>Eliminate waste and improve efficiency through Lean principles.</p>
@@ -566,9 +537,7 @@ ul { margin: 0; padding: 0; }
         </div>
       </article>
       <article class="training-card">
-        <div class="media">
-          <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-        </div>
+        <div class="media" style="background-image:url('../img/showcase-1-new.png'); background-size:cover; background-position:center; height:140px;"></div>
         <div class="caption">
           <h3>Six Sigma</h3>
           <p>Data-driven approach to reducing defects and improving quality.</p>
@@ -581,9 +550,7 @@ ul { margin: 0; padding: 0; }
         </div>
       </article>
       <article class="training-card">
-        <div class="media">
-          <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-        </div>
+        <div class="media" style="background-image:url('../img/hero-professionals.png'); background-size:cover; background-position:center; height:140px;"></div>
         <div class="caption">
           <h3>Total Productive Maintenance</h3>
           <p>Maximize equipment effectiveness through proactive maintenance.</p>
@@ -680,53 +647,12 @@ ul { margin: 0; padding: 0; }
   <div class="container">
     <h2>Develop Your Workforce's Capabilities?</h2>
     <p style="margin-bottom:1.5rem;">Enquire about our training programs today.</p>
-    <a href="../contact.html" class="button">Enquire About Training</a>
   </div>
 </section>
 
 <!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <h3>Mars Sigma Solutions</h3>
-        <p>Driving Quality. Transforming Businesses. Delivering Excellence.</p>
-        <p style="margin-top:0.5rem;">India | Bahrain</p>
-      </div>
-      <div>
-        <h3>Quick Links</h3>
-        <ul class="footer-links">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="#awareness">Awareness</a></li>
-          <li><a href="#quality-check">Quality Check</a></li>
-          <li><a href="#excellence">Excellence Training</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Our Services</h3>
-        <ul class="footer-links">
-          <li><a href="business-transformation.html">Business Transformation</a></li>
-          <li><a href="consulting.html">Consulting</a></li>
-          <li><a href="third-party-inspection.html">Third-Party Inspection</a></li>
-          <li><a href="#standards">Standards</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Contact Us</h3>
-        <p style="margin-bottom:0.5rem;">+91 94440 84652</p>
-        <p style="margin-bottom:0.5rem;">info@marssigma.com</p>
-        <p>India | Bahrain</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div>© 2026 Mars Sigma Solutions Pvt Ltd. All rights reserved.</div>
-      <nav aria-label="Legal">
-        <a href="../pages/privacy.html">Privacy</a>
-        <a href="../pages/terms.html">Terms</a>
-      </nav>
-    </div>
-  </div>
-</footer>
+<div id="site-footer"></div>
+<script src="../assets/js/components.js" defer></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

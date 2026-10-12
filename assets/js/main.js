@@ -50,4 +50,16 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   });
+
+  // Button functionality: smooth-scroll for anchor links, contact navigation preserved
+  document.querySelectorAll('.button, .nav-cta, a[href^="#"], a[href*="contact"]').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      var href = btn.getAttribute('href') || '';
+      if (href.indexOf('#') === 0) {
+        e.preventDefault();
+        var target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
 });

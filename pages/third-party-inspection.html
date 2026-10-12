@@ -5,11 +5,14 @@
 <title>Third-Party Inspection - Mars Sigma Solutions Pvt Ltd</title>
 <meta name="description" content="Third-Party Inspection services including Incoming, In-Process, Final, Pre-Dispatch, Vendor Inspection and Quality Manpower Deployment.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="../assets/images/favicon.png">
 <link href="https://cdn.prod.website-files.com" rel="preconnect" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com" rel="preconnect" crossorigin="anonymous">
 <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="../assets/css/main.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/navbar.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/subpage.css" rel="stylesheet" type="text/css">
 <style>
 :root {
   --maroon-red: #7A1E26;
@@ -365,6 +368,8 @@ ul { margin: 0; padding: 0; }
   .footer-bottom { flex-direction: column; text-align: center; gap: 1rem; }
 }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="../assets/js/scroll-smoother.js"></script>
 </head>
 <body>
 
@@ -372,40 +377,16 @@ ul { margin: 0; padding: 0; }
 <header>
   <nav class="navbar" aria-label="Main navigation">
     <div class="nav-container">
-      <a href="../index.html" class="nav-logo">MARS SIGMA <span>SOLUTIONS</span></a>
+      <a href="index.html" class="nav-logo" aria-label="Mars Sigma Solutions — Home"><img src="../assets/images/logo.jpg" alt="Mars Sigma" style="height:2rem;width:auto;display:block;"></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
         <span></span><span></span>
       </button>
       <div class="nav-menu" id="nav-menu">
         <a class="nav-link" href="../index.html">Home</a>
-        <div class="nav-dropdown">
-          <a class="nav-link" href="business-transformation.html">Business Transformation<span style="font-size:0.75em; margin-left:0.25em;">▼</span></a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="business-transformation.html">Overview</a>
-            <a class="dropdown-item" href="business-transformation.html#organisational-restructuring">Organisational Restructuring</a>
-            <a class="dropdown-item" href="business-transformation.html#business-turnaround">Business Turnaround</a>
-            <a class="dropdown-item" href="business-transformation.html#process-systems">Process &amp; Systems</a>
-          </div>
-        </div>
-        <div class="nav-dropdown">
-          <a class="nav-link" href="consulting.html">Consulting<span style="font-size:0.75em; margin-left:0.25em;">▼</span></a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="consulting.html">Overview</a>
-            <a class="dropdown-item" href="consulting.html#certification">Certification Services</a>
-            <a class="dropdown-item" href="consulting.html#result-oriented">Result-Oriented Services</a>
-            <a class="dropdown-item" href="consulting.html#supplier-dev">Supplier Development</a>
-          </div>
-        </div>
+        <a class="nav-link" href="business-transformation.html">Business Transformation</a>
+        <a class="nav-link" href="consulting.html">Consulting</a>
         <a class="nav-link active" href="third-party-inspection.html">Third Party Inspection</a>
-        <div class="nav-dropdown">
-          <a class="nav-link" href="training.html">Training<span style="font-size:0.75em; margin-left:0.25em;">▼</span></a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="training.html">Overview</a>
-            <a class="dropdown-item" href="training.html#awareness">Awareness</a>
-            <a class="dropdown-item" href="training.html#quality-check">Quality Check</a>
-            <a class="dropdown-item" href="training.html#excellence">Excellence Training</a>
-          </div>
-        </div>
+        <a class="nav-link" href="training.html">Training</a>
         <a class="nav-link" href="contact.html">Contact Us</a>
         <a class="nav-cta" href="contact.html">Talk to Our Experts</a>
       </div>
@@ -413,11 +394,15 @@ ul { margin: 0; padding: 0; }
   </nav>
 </header>
 
-<!-- Hero Section -->
-<section class="page-hero">
-  <div class="container">
-    <h1>Third-Party Inspection Services</h1>
-    <p>Independent quality assurance through professional inspection and verification services.</p>
+<!-- Hero Section with Image Background -->
+<section class="page-hero video-hero" style="position:relative; padding:0; min-height:550px; overflow:hidden;">
+  <div style="position:absolute; inset:0; overflow:hidden; z-index:0;">
+    <img src="../img/tpi-blue.png" alt="Third-Party Inspection - Quality Assurance" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; filter:grayscale(20%) brightness(0.6);">
+  </div>
+  <div style="position:absolute; inset:0; background:linear-gradient(135deg,rgba(10,15,26,0.95) 0%,rgba(10,15,26,0.6) 50%,transparent 100%); pointer-events:none; z-index:1;"></div>
+  <div class="container" style="position:relative; z-index:2; padding-top:10rem; padding-bottom:5rem;">
+    <h1 style="font-size:3.5rem; font-weight:300; line-height:1.15; max-width:28ch; margin-bottom:1.5rem; color:#fff;">Third-Party Inspection Services</h1>
+    <p style="font-size:1.125rem; line-height:1.6; color:rgba(255,255,255,0.85);">Independent quality assurance through professional inspection and verification services.</p>
   </div>
 </section>
 
@@ -554,44 +539,44 @@ ul { margin: 0; padding: 0; }
     </div>
     <div class="industry-grid">
       <article class="industry-card">
-        <div class="media">Manufacturing</div>
+        <div class="media" style="background-image:url('../img/Engineering & Manufacturing.jpg.jpeg'); background-size:cover; background-position:center; height:100px;"></div>
         <div class="caption">
           <h3>Manufacturing</h3>
           <p>From raw materials to finished goods, we ensure quality at every stage.</p>
         </div>
       </article>
       <article class="industry-card">
-        <div class="media">Automotive</div>
+        <div class="media" style="background-image:url('../img/Automotive & Auto Components.jpg.jpeg'); background-size:cover; background-position:center; height:100px;"></div>
         <div class="caption">
           <h3>Automotive</h3>
           <p>Meeting IATF 16949 requirements with rigorous quality inspection.</p>
         </div>
       </article>
       <article class="industry-card">
-        <div class="media">Aerospace</div>
+        <div class="media" style="background-image:url('../img/Aerospace & Precision Engineering.jpg.jpeg'); background-size:cover; background-position:center; height:100px;"></div>
         <div class="caption">
           <h3>Aerospace</h3>
           <p>Precision inspection for AS9100 compliance and safety-critical components.</p>
         </div>
       </article>
       <article class="industry-card">
-        <div class="media">Electronics</div>
+        <div class="media" style="background-image:url('../img/IT & Service Organizations.jpg.jpeg'); background-size:cover; background-position:center; height:100px;"></div>
         <div class="caption">
           <h3>Electronics</h3>
           <p>Quality assurance for sensitive components and complex assemblies.</p>
         </div>
       </article>
       <article class="industry-card">
-        <div class="media">Construction</div>
+        <div class="media" style="background-image:url('../img/Process & Industrial Sectors.jpg.jpeg'); background-size:cover; background-position:center; height:100px;"></div>
         <div class="caption">
           <h3>Construction</h3>
           <p>Material inspection and quality verification for building projects.</p>
         </div>
       </article>
       <article class="industry-card">
-        <div class="media">Food & Beverage</div>
+        <div class="media" style="background-image:url('../img/FMCG & Food Processing.jpg.jpeg'); background-size:cover; background-position:center; height:100px;"></div>
         <div class="caption">
-          <h3>Food &amp; Beverage</h3>
+          <h3>Food & Beverage</h3>
           <p>Quality and safety inspection for food processing and packaging.</p>
         </div>
       </article>
@@ -604,52 +589,12 @@ ul { margin: 0; padding: 0; }
   <div class="container">
     <h2>Need Independent Quality Assurance?</h2>
     <p style="margin-bottom:1.5rem;">Request our inspection services today.</p>
-    <a href="../contact.html" class="button">Request Inspection Service</a>
   </div>
 </section>
 
 <!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <h3>Mars Sigma Solutions</h3>
-        <p>Driving Quality. Transforming Businesses. Delivering Excellence.</p>
-        <p style="margin-top:0.5rem;">India | Bahrain</p>
-      </div>
-      <div>
-        <h3>Quick Links</h3>
-        <ul class="footer-links">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="#inspection-services">Services</a></li>
-          <li><a href="#process">Inspection Process</a></li>
-          <li><a href="#industries">Industries</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Our Services</h3>
-        <ul class="footer-links">
-          <li><a href="business-transformation.html">Business Transformation</a></li>
-          <li><a href="consulting.html">Consulting</a></li>
-          <li><a href="training.html">Training</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Contact Us</h3>
-        <p style="margin-bottom:0.5rem;">+91 94440 84652</p>
-        <p style="margin-bottom:0.5rem;">info@marssigma.com</p>
-        <p>India | Bahrain</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div>© 2026 Mars Sigma Solutions Pvt Ltd. All rights reserved.</div>
-      <nav aria-label="Legal">
-        <a href="../pages/privacy.html">Privacy</a>
-        <a href="../pages/terms.html">Terms</a>
-      </nav>
-    </div>
-  </div>
-</footer>
+<div id="site-footer"></div>
+<script src="../assets/js/components.js" defer></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
